@@ -1,23 +1,53 @@
 create database SalePoint
-go
+
 use SalePoint
 go
 
-CREATE TABLE EMPLOYEES
-(
-	 identification varchar (50) not null,
-	 name varchar (50) not null,
-	 last_name varchar (50) null,
-	 age int null,
-	 license varchar (50) null,
-	  password1 varchar (100) null,
-	 phone varchar (50) null,
-	  postType int null,
-	   salary float null,
-	 a_ddress varchar (50) null,
-	 email varchar (20) null,
-	 constraint pk_people primary key (identification)
+create table postType(
+ [id] int identity,
+ [description] text,
+ constraint pk_postId primary key (id)
+)
+
+insert into postType values ('Chofer');
+insert into postType values ('Administrador');
+insert into postType values ('Encargado');
+
+select * from postType;
+--drop table postType
+--drop table EMPLOYEES
+
+CREATE TABLE EMPLOYEE(
+     [id] int  identity,
+	 [identification] varchar (50) not null,
+	 [name] varchar (50) not null,
+	 [last_name] varchar (50) null,
+	 [age] int null,
+	 [license] varchar (50) null,
+	[password] varchar (100) null,
+	 [phone] varchar (50) null,
+	 [postType] int null,
+	 [salary] int null,
+	 [address] varchar (50) null,
+	 [email] varchar (50) null,
+	 constraint pk_people primary key (id),
+	 constraint fk_post foreign key (postType) references postType (id)
 );
+
+insert into EMPLOYEE values ('2710785','Juan','Quiros Gonzalez',20,'si','1234','88078162',1,240000,'600mts sur de la iglesia catolica','Juan_gonzalez93@hotmail.com');
+select * from EMPLOYEE;
+
+--DROP table 
+--TABLA FAMILIA_PRODUCTO ya que cada producto se clasifica dentro de una familia, la cual define el tipo del producto
+CREATE TABLE family_product
+(
+	 [id] int  identity,
+	 [description] text,
+	 constraint pk_family_product primary key (id)
+);
+
+insert into family_product values('Tuberculos');
+insert into family_product values('Legumbres');
 
 
 
@@ -30,51 +60,36 @@ CREATE TABLE requisition_type
      constraint fk_person foreign key (id_person) references EMPLOYEES (identification)
 );
 
-
---DROP table 
---TABLA FAMILIA_PRODUCTO ya que cada producto se clasifica dentro de una familia, la cual define el tipo del producto
-CREATE TABLE family_product
+--TABLA PROVEEDORES, INDENTIFICA AL PROVEEDOR 
+CREATE TABLE supplier 
 (
-	 family_code int identity,
-	 familyProduct_name varchar (100) null,
-	 constraint pk_family_product primary key (family_code)
+    [id] int identity,
+  	 [legalIdentification_card] varchar (50) not null,
+	 [company] varchar (50) null,
+     [account] varchar (50) null,
+      [phone] varchar (50) null,
+      [address] varchar (50) null,
+       [email] varchar (50) null,
+	 constraint pk_supplier primary key (id)	
 );
+drop table supplier
 
-
-
-
---TABLA PROVEEDORES, INDENTIFICA AL PROVEEDOR DESDE LA TABLA PERSONAS
-CREATE TABLE suppliers 
-(
-  	 supplier_id int identity,
-  	 legalIdentification_card varchar (50) not null,
-	 company varchar (50) null,
-     company_account varchar (50) null,
-      phone varchar (50) null,
-      a_ddress varchar (50) null,
-       email varchar (20) null,
-	 constraint pk_suppliers_a primary key (supplier_id)	
-);
-
-
-DROP table products
+DROP table product
 --TABLE ARTICLES O PRODUCTS
-CREATE TABLE products
+CREATE TABLE product
 (
-	 product_id int identity,
-	 familyProduct_code int not null,
-	 product_name varchar (50) null,
- 	 product_description varchar (1000) null,
-     unit_price float null,
-	 expiration_date date null,
-	 existence int null,
-	 minimum_num int null,
- 	 sstate varchar (50) null,
-     unitMeasure varchar (50) null,
-	 majorSupplier_id int not null,--mayor proveedor
-	 constraint pk_products primary key (product_id),
-	 constraint fk_familyProduct foreign key (familyProduct_code) references family_product (family_code),
-	 constraint fk_supplier foreign key (majorSupplier_id) references suppliers (supplier_id)
+	[id] int identity,
+	[code]int not null,
+	 [familyProduct] int not null,
+	 [product_name] varchar (50) null,
+     [unit_price] float null,
+	 [expiration] date null,
+	 [existence] float null,
+	 [minimum] int not null,
+	[supplier] int not null,--mayor proveedor
+	 constraint pk_products primary key (id),
+	 constraint fk_familyProduct foreign key (familyProduct) references family_product (id),
+	 constraint fk_supplier foreign key (supplier) references supplier (id)
 );
 
 
