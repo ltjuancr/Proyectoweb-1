@@ -27,5 +27,8 @@ namespace Proyecto.DataAccess
     
         public DbSet<postType> postType { get; set; }
         public DbSet<EMPLOYEE> EMPLOYEE { get; set; }
+        public DbSet<family_product> family_product { get; set; }
+        public DbSet<supplier> supplier { get; set; }
+        public DbSet<product> product { get; set; }
     }
 }

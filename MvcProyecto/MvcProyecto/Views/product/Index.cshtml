@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Proyecto.DataAccess.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.family_product.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unit_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.existence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minimum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier1.legalIdentification_card)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.family_product.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.existence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.minimum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supplier1.legalIdentification_card)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

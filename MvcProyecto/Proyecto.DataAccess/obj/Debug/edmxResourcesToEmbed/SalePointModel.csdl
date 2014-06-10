@@ -7,6 +7,17 @@
       <End Role="postType" EntitySet="postType" />
       <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
     </AssociationSet>
+    <EntitySet Name="family_product" EntityType="SalePointModel.family_product" />
+    <EntitySet Name="supplier" EntityType="SalePointModel.supplier" />
+    <EntitySet Name="product" EntityType="SalePointModel.product" />
+    <AssociationSet Name="fk_familyProduct" Association="SalePointModel.fk_familyProduct">
+      <End Role="family_product" EntitySet="family_product" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supplier" Association="SalePointModel.fk_supplier">
+      <End Role="supplier" EntitySet="supplier" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="postType">
     <Key>
@@ -43,6 +54,67 @@
       </Principal>
       <Dependent Role="EMPLOYEE">
         <PropertyRef Name="postType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="family_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="product" Relationship="SalePointModel.fk_familyProduct" FromRole="family_product" ToRole="product" />
+  </EntityType>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="product" Relationship="SalePointModel.fk_supplier" FromRole="supplier" ToRole="product" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="Int32" Name="familyProduct" Nullable="false" />
+    <Property Type="String" Name="product_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="unit_price" />
+    <Property Type="DateTime" Name="expiration" Precision="0" />
+    <Property Type="Double" Name="existence" />
+    <Property Type="Int32" Name="minimum" Nullable="false" />
+    <Property Type="Int32" Name="supplier" Nullable="false" />
+    <NavigationProperty Name="family_product" Relationship="SalePointModel.fk_familyProduct" FromRole="product" ToRole="family_product" />
+    <NavigationProperty Name="supplier1" Relationship="SalePointModel.fk_supplier" FromRole="product" ToRole="supplier" />
+  </EntityType>
+  <Association Name="fk_familyProduct">
+    <End Type="SalePointModel.family_product" Role="family_product" Multiplicity="1" />
+    <End Type="SalePointModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="family_product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="familyProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supplier">
+    <End Type="SalePointModel.supplier" Role="supplier" Multiplicity="1" />
+    <End Type="SalePointModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supplier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="supplier" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

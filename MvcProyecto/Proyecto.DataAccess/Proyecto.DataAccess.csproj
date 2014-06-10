@@ -52,7 +52,13 @@
     <Compile Include="EMPLOYEE.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="family_product.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="postType.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +76,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SalePointModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="supplier.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

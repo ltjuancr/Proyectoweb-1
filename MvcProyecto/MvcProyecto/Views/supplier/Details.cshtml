@@ -1,0 +1,57 @@
+﻿@model Proyecto.DataAccess.supplier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>supplier</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.legalIdentification_card)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.legalIdentification_card)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.company)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.company)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

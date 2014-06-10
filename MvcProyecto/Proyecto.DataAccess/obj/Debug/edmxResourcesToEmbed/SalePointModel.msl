@@ -27,5 +27,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="family_product">
+      <EntityTypeMapping TypeName="SalePointModel.family_product">
+        <MappingFragment StoreEntitySet="family_product">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier">
+      <EntityTypeMapping TypeName="SalePointModel.supplier">
+        <MappingFragment StoreEntitySet="supplier">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="SalePointModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="minimum" ColumnName="minimum" />
+          <ScalarProperty Name="existence" ColumnName="existence" />
+          <ScalarProperty Name="expiration" ColumnName="expiration" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="familyProduct" ColumnName="familyProduct" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

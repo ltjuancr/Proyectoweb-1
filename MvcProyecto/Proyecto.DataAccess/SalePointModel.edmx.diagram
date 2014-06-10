@@ -8,7 +8,12 @@
         <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="1.75" PointY="3.125" />
         <EntityTypeShape EntityType="SalePointModel.EMPLOYEE" Width="1.5" PointX="6.071576437946212" PointY="16.284729145599869" />
         <AssociationConnector Association="SalePointModel.fk_post" />
-      </Diagram>
+        <EntityTypeShape EntityType="SalePointModel.family_product" Width="1.5" PointX="17.5" PointY="8.625" />
+        <EntityTypeShape EntityType="SalePointModel.supplier" Width="1.5" PointX="1.125" PointY="10.5" />
+        <EntityTypeShape EntityType="SalePointModel.product" Width="1.5" PointX="1.6182760082270373" PointY="17.798519247117696" />
+        <AssociationConnector Association="SalePointModel.fk_familyProduct" />
+        <AssociationConnector Association="SalePointModel.fk_supplier" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

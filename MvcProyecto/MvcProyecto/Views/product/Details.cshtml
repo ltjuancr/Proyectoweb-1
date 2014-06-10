@@ -1,0 +1,71 @@
+﻿@model Proyecto.DataAccess.product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>product</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.family_product.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.family_product.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.product_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.product_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.expiration)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.expiration)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.existence)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.existence)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.minimum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.minimum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.supplier1.legalIdentification_card)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.supplier1.legalIdentification_card)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

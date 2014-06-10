@@ -163,8 +163,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\employeeController.cs" />
+    <Compile Include="Controllers\family_productController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\postController.cs" />
+    <Compile Include="Controllers\productController.cs" />
+    <Compile Include="Controllers\supplierController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -298,6 +301,21 @@
     <Content Include="Views\employee\Create.cshtml" />
     <Content Include="Views\employee\Edit.cshtml" />
     <Content Include="Views\employee\Delete.cshtml" />
+    <Content Include="Views\family_product\Index.cshtml" />
+    <Content Include="Views\family_product\Details.cshtml" />
+    <Content Include="Views\family_product\Create.cshtml" />
+    <Content Include="Views\family_product\Edit.cshtml" />
+    <Content Include="Views\family_product\Delete.cshtml" />
+    <Content Include="Views\supplier\Index.cshtml" />
+    <Content Include="Views\supplier\Details.cshtml" />
+    <Content Include="Views\supplier\Create.cshtml" />
+    <Content Include="Views\supplier\Edit.cshtml" />
+    <Content Include="Views\supplier\Delete.cshtml" />
+    <Content Include="Views\product\Index.cshtml" />
+    <Content Include="Views\product\Details.cshtml" />
+    <Content Include="Views\product\Create.cshtml" />
+    <Content Include="Views\product\Edit.cshtml" />
+    <Content Include="Views\product\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
