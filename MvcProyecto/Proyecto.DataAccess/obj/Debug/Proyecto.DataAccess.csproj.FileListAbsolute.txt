@@ -1,0 +1,9 @@
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\Proyecto.DataAccess.dll.config
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\Proyecto.DataAccess.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\Proyecto.DataAccess.pdb
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\obj\Debug\Proyecto.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\obj\Debug\Proyecto.DataAccess.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\Proyecto.DataAccess\obj\Debug\Proyecto.DataAccess.pdb

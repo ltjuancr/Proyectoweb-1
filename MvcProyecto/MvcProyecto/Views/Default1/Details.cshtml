@@ -1,0 +1,92 @@
+﻿@model Proyecto.DataAccess.EMPLOYEES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EMPLOYEES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.identification)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.identification)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.last_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.last_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.age)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.age)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.license)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.license)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.postType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.postType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.salary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.salary)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.a_ddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.a_ddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

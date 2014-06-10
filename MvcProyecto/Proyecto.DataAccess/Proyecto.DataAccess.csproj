@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87F9225B-41F0-476C-BFFF-9CFF842C6CAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto.DataAccess</RootNamespace>
+    <AssemblyName>Proyecto.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accounts_payable.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receivable.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bills.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clients.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEES.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="family_product.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="products.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="requisition.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="requisition_type.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="route_s.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalePointModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalePointModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalePointModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalePointModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalePointModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sales_history.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="suppliers.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SalePointModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SalePointModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="SalePointModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SalePointModel.edmx</DependentUpon>
+      <LastGenOutput>SalePointModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SalePointModel.edmx.diagram">
+      <DependentUpon>SalePointModel.edmx</DependentUpon>
+    </None>
+    <None Include="SalePointModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SalePointModel.edmx</DependentUpon>
+      <LastGenOutput>SalePointModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
