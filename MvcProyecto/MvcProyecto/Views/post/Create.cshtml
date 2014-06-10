@@ -1,24 +1,16 @@
 ﻿@model Proyecto.DataAccess.postType
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>postType</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.id)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.id)
-            @Html.ValidationMessageFor(model => model.id)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.description)
@@ -29,7 +21,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }

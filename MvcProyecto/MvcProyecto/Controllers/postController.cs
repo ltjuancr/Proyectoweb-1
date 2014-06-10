@@ -9,12 +9,12 @@ using Proyecto.DataAccess;
 
 namespace MvcProyecto.Controllers
 {
-    public class postTypeController : Controller
+    public class postController : Controller
     {
         private SalePointEntities db = new SalePointEntities();
 
         //
-        // GET: /postType/
+        // GET: /post/
 
         public ActionResult Index()
         {
@@ -22,7 +22,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // GET: /postType/Details/5
+        // GET: /post/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -35,7 +35,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // GET: /postType/Create
+        // GET: /post/Create
 
         public ActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // POST: /postType/Create
+        // POST: /post/Create
 
         [HttpPost]
         public ActionResult Create(postType posttype)
@@ -59,7 +59,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // GET: /postType/Edit/5
+        // GET: /post/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -72,7 +72,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // POST: /postType/Edit/5
+        // POST: /post/Edit/5
 
         [HttpPost]
         public ActionResult Edit(postType posttype)
@@ -87,7 +87,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // GET: /postType/Delete/5
+        // GET: /post/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -100,7 +100,7 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // POST: /postType/Delete/5
+        // POST: /post/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

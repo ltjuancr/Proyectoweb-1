@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SalePointModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="SalePointModelStoreContainer">
-    <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.Store.EMPLOYEES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMPLOYEE" EntityType="SalePointModel.Store.EMPLOYEE" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="postType" EntityType="SalePointModel.Store.postType" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="fk_post" Association="SalePointModel.Store.fk_post">
       <End Role="postType" EntitySet="postType" />
-      <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="EMPLOYEES">
+  <EntityType Name="EMPLOYEE">
     <Key>
-      <PropertyRef Name="identification" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="id_employess" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="identification" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="last_name" Type="varchar" MaxLength="50" />
@@ -27,19 +27,19 @@
   </EntityType>
   <EntityType Name="postType">
     <Key>
-      <PropertyRef Name="id_postType" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="id_postType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="text" />
   </EntityType>
   <Association Name="fk_post">
     <End Role="postType" Type="SalePointModel.Store.postType" Multiplicity="0..1" />
-    <End Role="EMPLOYEES" Type="SalePointModel.Store.EMPLOYEES" Multiplicity="*" />
+    <End Role="EMPLOYEE" Type="SalePointModel.Store.EMPLOYEE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="postType">
-        <PropertyRef Name="id_postType" />
+        <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="EMPLOYEES">
+      <Dependent Role="EMPLOYEE">
         <PropertyRef Name="postType" />
       </Dependent>
     </ReferentialConstraint>

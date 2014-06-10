@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dc1b029241d44d15a5fb5df8c18bc28b" Name="Diagrama1">
-        <EntityTypeShape EntityType="SalePointModel.EMPLOYEES" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="SalePointModel.fk_post" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="1.75" PointY="3.125" />
+        <EntityTypeShape EntityType="SalePointModel.EMPLOYEE" Width="1.5" PointX="6.071576437946212" PointY="16.284729145599869" />
+        <AssociationConnector Association="SalePointModel.fk_post" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -162,8 +162,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\employeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\postTypeController.cs" />
+    <Compile Include="Controllers\postController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -287,6 +288,16 @@
     <Content Include="Views\postType\Create.cshtml" />
     <Content Include="Views\postType\Edit.cshtml" />
     <Content Include="Views\postType\Delete.cshtml" />
+    <Content Include="Views\post\Index.cshtml" />
+    <Content Include="Views\post\Details.cshtml" />
+    <Content Include="Views\post\Create.cshtml" />
+    <Content Include="Views\post\Edit.cshtml" />
+    <Content Include="Views\post\Delete.cshtml" />
+    <Content Include="Views\employee\Index.cshtml" />
+    <Content Include="Views\employee\Details.cshtml" />
+    <Content Include="Views\employee\Create.cshtml" />
+    <Content Include="Views\employee\Edit.cshtml" />
+    <Content Include="Views\employee\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

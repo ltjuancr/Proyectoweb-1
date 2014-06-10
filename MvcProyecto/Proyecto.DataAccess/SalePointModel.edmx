@@ -4,20 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SalePointModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SalePointModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="SalePointModelStoreContainer">
-          <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.Store.EMPLOYEES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EMPLOYEE" EntityType="SalePointModel.Store.EMPLOYEE" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="postType" EntityType="SalePointModel.Store.postType" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="fk_post" Association="SalePointModel.Store.fk_post">
             <End Role="postType" EntitySet="postType" />
-            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="EMPLOYEES">
+        <EntityType Name="EMPLOYEE">
           <Key>
-            <PropertyRef Name="identification" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_employess" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="identification" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="last_name" Type="varchar" MaxLength="50" />
@@ -32,103 +32,102 @@
         </EntityType>
         <EntityType Name="postType">
           <Key>
-            <PropertyRef Name="id_postType" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_postType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="text" />
         </EntityType>
         <Association Name="fk_post">
           <End Role="postType" Type="SalePointModel.Store.postType" Multiplicity="0..1" />
-          <End Role="EMPLOYEES" Type="SalePointModel.Store.EMPLOYEES" Multiplicity="*" />
+          <End Role="EMPLOYEE" Type="SalePointModel.Store.EMPLOYEE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="postType">
-              <PropertyRef Name="id_postType" />
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="EMPLOYEES">
+            <Dependent Role="EMPLOYEE">
               <PropertyRef Name="postType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SalePointModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SalePointEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.EMPLOYEES" />
           <EntitySet Name="postType" EntityType="SalePointModel.postType" />
+          <EntitySet Name="EMPLOYEE" EntityType="SalePointModel.EMPLOYEE" />
           <AssociationSet Name="fk_post" Association="SalePointModel.fk_post">
             <End Role="postType" EntitySet="postType" />
-            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="EMPLOYEES">
-          <Key>
-            <PropertyRef Name="identification" />
-          </Key>
-          <Property Name="id_employess" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="identification" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="last_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="age" Type="Int32" />
-          <Property Name="license" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="postType" Type="Int32" />
-          <Property Name="salary" Type="Int32" />
-          <Property Name="address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="postType1" Relationship="SalePointModel.fk_post" FromRole="EMPLOYEES" ToRole="postType" />
-        </EntityType>
         <EntityType Name="postType">
           <Key>
-            <PropertyRef Name="id_postType" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id_postType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="EMPLOYEES" Relationship="SalePointModel.fk_post" FromRole="postType" ToRole="EMPLOYEES" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPLOYEE" Relationship="SalePointModel.fk_post" FromRole="postType" ToRole="EMPLOYEE" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="identification" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="age" />
+          <Property Type="String" Name="license" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="postType" />
+          <Property Type="Int32" Name="salary" />
+          <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="postType1" Relationship="SalePointModel.fk_post" FromRole="EMPLOYEE" ToRole="postType" />
         </EntityType>
         <Association Name="fk_post">
-          <End Role="postType" Type="SalePointModel.postType" Multiplicity="0..1" />
-          <End Role="EMPLOYEES" Type="SalePointModel.EMPLOYEES" Multiplicity="*" />
+          <End Type="SalePointModel.postType" Role="postType" Multiplicity="0..1" />
+          <End Type="SalePointModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="postType">
-              <PropertyRef Name="id_postType" />
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="EMPLOYEES">
+            <Dependent Role="EMPLOYEE">
               <PropertyRef Name="postType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SalePointModelStoreContainer" CdmEntityContainer="SalePointEntities">
-          <EntitySetMapping Name="EMPLOYEES">
-            <EntityTypeMapping TypeName="SalePointModel.EMPLOYEES">
-              <MappingFragment StoreEntitySet="EMPLOYEES">
-                <ScalarProperty Name="id_employess" ColumnName="id_employess" />
-                <ScalarProperty Name="identification" ColumnName="identification" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
-                <ScalarProperty Name="age" ColumnName="age" />
-                <ScalarProperty Name="license" ColumnName="license" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="postType" ColumnName="postType" />
-                <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="postType">
             <EntityTypeMapping TypeName="SalePointModel.postType">
               <MappingFragment StoreEntitySet="postType">
-                <ScalarProperty Name="id_postType" ColumnName="id_postType" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEE">
+            <EntityTypeMapping TypeName="SalePointModel.EMPLOYEE">
+              <MappingFragment StoreEntitySet="EMPLOYEE">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="postType" ColumnName="postType" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="license" ColumnName="license" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="identification" ColumnName="identification" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

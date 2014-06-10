@@ -12,9 +12,9 @@ namespace Proyecto.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class EMPLOYEES
+    public partial class EMPLOYEE
     {
-        public int id_employess { get; set; }
+        public int id { get; set; }
         public string identification { get; set; }
         public string name { get; set; }
         public string last_name { get; set; }

@@ -49,7 +49,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EMPLOYEES.cs">
+    <Compile Include="EMPLOYEE.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
     <Compile Include="postType.cs">

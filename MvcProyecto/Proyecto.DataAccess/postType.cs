@@ -16,12 +16,12 @@ namespace Proyecto.DataAccess
     {
         public postType()
         {
-            this.EMPLOYEES = new HashSet<EMPLOYEES>();
+            this.EMPLOYEE = new HashSet<EMPLOYEE>();
         }
     
-        public int id_postType { get; set; }
+        public int id { get; set; }
         public string description { get; set; }
     
-        public virtual ICollection<EMPLOYEES> EMPLOYEES { get; set; }
+        public virtual ICollection<EMPLOYEE> EMPLOYEE { get; set; }
     }
 }

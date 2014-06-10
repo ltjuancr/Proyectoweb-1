@@ -25,7 +25,7 @@ namespace Proyecto.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<EMPLOYEES> EMPLOYEES { get; set; }
         public DbSet<postType> postType { get; set; }
+        public DbSet<EMPLOYEE> EMPLOYEE { get; set; }
     }
 }

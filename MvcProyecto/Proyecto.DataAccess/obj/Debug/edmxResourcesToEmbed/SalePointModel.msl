@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SalePointModelStoreContainer" CdmEntityContainer="SalePointEntities">
-    <EntitySetMapping Name="EMPLOYEES">
-      <EntityTypeMapping TypeName="SalePointModel.EMPLOYEES">
-        <MappingFragment StoreEntitySet="EMPLOYEES">
-          <ScalarProperty Name="id_employess" ColumnName="id_employess" />
-          <ScalarProperty Name="identification" ColumnName="identification" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="last_name" ColumnName="last_name" />
-          <ScalarProperty Name="age" ColumnName="age" />
-          <ScalarProperty Name="license" ColumnName="license" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="postType" ColumnName="postType" />
-          <ScalarProperty Name="salary" ColumnName="salary" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="email" ColumnName="email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="postType">
       <EntityTypeMapping TypeName="SalePointModel.postType">
         <MappingFragment StoreEntitySet="postType">
-          <ScalarProperty Name="id_postType" ColumnName="id_postType" />
           <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE">
+      <EntityTypeMapping TypeName="SalePointModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="postType" ColumnName="postType" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="license" ColumnName="license" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

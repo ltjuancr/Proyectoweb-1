@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SalePointModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="SalePointEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.EMPLOYEES" />
     <EntitySet Name="postType" EntityType="SalePointModel.postType" />
+    <EntitySet Name="EMPLOYEE" EntityType="SalePointModel.EMPLOYEE" />
     <AssociationSet Name="fk_post" Association="SalePointModel.fk_post">
       <End Role="postType" EntitySet="postType" />
-      <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="EMPLOYEES">
-    <Key>
-      <PropertyRef Name="identification" />
-    </Key>
-    <Property Name="id_employess" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="identification" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="last_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="age" Type="Int32" />
-    <Property Name="license" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="postType" Type="Int32" />
-    <Property Name="salary" Type="Int32" />
-    <Property Name="address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="postType1" Relationship="SalePointModel.fk_post" FromRole="EMPLOYEES" ToRole="postType" />
-  </EntityType>
   <EntityType Name="postType">
     <Key>
-      <PropertyRef Name="id_postType" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="id_postType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="EMPLOYEES" Relationship="SalePointModel.fk_post" FromRole="postType" ToRole="EMPLOYEES" />
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="SalePointModel.fk_post" FromRole="postType" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="identification" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="age" />
+    <Property Type="String" Name="license" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="postType" />
+    <Property Type="Int32" Name="salary" />
+    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="postType1" Relationship="SalePointModel.fk_post" FromRole="EMPLOYEE" ToRole="postType" />
   </EntityType>
   <Association Name="fk_post">
-    <End Role="postType" Type="SalePointModel.postType" Multiplicity="0..1" />
-    <End Role="EMPLOYEES" Type="SalePointModel.EMPLOYEES" Multiplicity="*" />
+    <End Type="SalePointModel.postType" Role="postType" Multiplicity="0..1" />
+    <End Type="SalePointModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="postType">
-        <PropertyRef Name="id_postType" />
+        <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="EMPLOYEES">
+      <Dependent Role="EMPLOYEE">
         <PropertyRef Name="postType" />
       </Dependent>
     </ReferentialConstraint>
