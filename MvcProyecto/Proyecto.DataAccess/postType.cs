@@ -12,18 +12,16 @@ namespace Proyecto.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class requisition_type
+    public partial class postType
     {
-        public requisition_type()
+        public postType()
         {
-            this.requisition = new HashSet<requisition>();
+            this.EMPLOYEES = new HashSet<EMPLOYEES>();
         }
     
-        public int requisitionType_id { get; set; }
-        public string name_type { get; set; }
-        public string id_person { get; set; }
+        public int id_postType { get; set; }
+        public string description { get; set; }
     
-        public virtual EMPLOYEES EMPLOYEES { get; set; }
-        public virtual ICollection<requisition> requisition { get; set; }
+        public virtual ICollection<EMPLOYEES> EMPLOYEES { get; set; }
     }
 }

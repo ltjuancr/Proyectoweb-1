@@ -9,33 +9,33 @@ using Proyecto.DataAccess;
 
 namespace MvcProyecto.Controllers
 {
-    public class Default1Controller : Controller
+    public class postTypeController : Controller
     {
         private SalePointEntities db = new SalePointEntities();
 
         //
-        // GET: /Default1/
+        // GET: /postType/
 
         public ActionResult Index()
         {
-            return View(db.EMPLOYEES.ToList());
+            return View(db.postType.ToList());
         }
 
         //
-        // GET: /Default1/Details/5
+        // GET: /postType/Details/5
 
-        public ActionResult Details(string id = null)
+        public ActionResult Details(int id = 0)
         {
-            EMPLOYEES employees = db.EMPLOYEES.Find(id);
-            if (employees == null)
+            postType posttype = db.postType.Find(id);
+            if (posttype == null)
             {
                 return HttpNotFound();
             }
-            return View(employees);
+            return View(posttype);
         }
 
         //
-        // GET: /Default1/Create
+        // GET: /postType/Create
 
         public ActionResult Create()
         {
@@ -43,70 +43,70 @@ namespace MvcProyecto.Controllers
         }
 
         //
-        // POST: /Default1/Create
+        // POST: /postType/Create
 
         [HttpPost]
-        public ActionResult Create(EMPLOYEES employees)
+        public ActionResult Create(postType posttype)
         {
             if (ModelState.IsValid)
             {
-                db.EMPLOYEES.Add(employees);
+                db.postType.Add(posttype);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(employees);
+            return View(posttype);
         }
 
         //
-        // GET: /Default1/Edit/5
+        // GET: /postType/Edit/5
 
-        public ActionResult Edit(string id = null)
+        public ActionResult Edit(int id = 0)
         {
-            EMPLOYEES employees = db.EMPLOYEES.Find(id);
-            if (employees == null)
+            postType posttype = db.postType.Find(id);
+            if (posttype == null)
             {
                 return HttpNotFound();
             }
-            return View(employees);
+            return View(posttype);
         }
 
         //
-        // POST: /Default1/Edit/5
+        // POST: /postType/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(EMPLOYEES employees)
+        public ActionResult Edit(postType posttype)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employees).State = EntityState.Modified;
+                db.Entry(posttype).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(employees);
+            return View(posttype);
         }
 
         //
-        // GET: /Default1/Delete/5
+        // GET: /postType/Delete/5
 
-        public ActionResult Delete(string id = null)
+        public ActionResult Delete(int id = 0)
         {
-            EMPLOYEES employees = db.EMPLOYEES.Find(id);
-            if (employees == null)
+            postType posttype = db.postType.Find(id);
+            if (posttype == null)
             {
                 return HttpNotFound();
             }
-            return View(employees);
+            return View(posttype);
         }
 
         //
-        // POST: /Default1/Delete/5
+        // POST: /postType/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            EMPLOYEES employees = db.EMPLOYEES.Find(id);
-            db.EMPLOYEES.Remove(employees);
+            postType posttype = db.postType.Find(id);
+            db.postType.Remove(posttype);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -25,18 +25,7 @@ namespace Proyecto.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<accounts_payable> accounts_payable { get; set; }
-        public DbSet<accounts_receivable> accounts_receivable { get; set; }
-        public DbSet<bills> bills { get; set; }
-        public DbSet<clients> clients { get; set; }
         public DbSet<EMPLOYEES> EMPLOYEES { get; set; }
-        public DbSet<family_product> family_product { get; set; }
-        public DbSet<products> products { get; set; }
-        public DbSet<requisition> requisition { get; set; }
-        public DbSet<requisition_type> requisition_type { get; set; }
-        public DbSet<route_s> route_s { get; set; }
-        public DbSet<sales_history> sales_history { get; set; }
-        public DbSet<suppliers> suppliers { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<postType> postType { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87F9225B-41F0-476C-BFFF-9CFF842C6CAA}</ProjectGuid>
+    <ProjectGuid>{EDFE01C4-84A4-4508-8B13-B5635477765A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Proyecto.DataAccess</RootNamespace>
@@ -49,37 +49,13 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accounts_payable.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="accounts_receivable.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="bills.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="clients.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EMPLOYEES.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="family_product.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="products.cs">
+    <Compile Include="postType.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="requisition.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="requisition_type.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="route_s.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="SalePointModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,15 +70,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SalePointModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="sales_history.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="suppliers.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

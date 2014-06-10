@@ -4,38 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c225db0003fe4203bda498c74739d3f4" Name="Diagrama1">
-        <EntityTypeShape EntityType="SalePointModel.accounts_payable" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.accounts_receivable" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.bills" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.clients" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.EMPLOYEES" Width="1.5" PointX="6.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.family_product" Width="1.5" PointX="1.5" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.products" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.requisition" Width="1.5" PointX="11.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.requisition_type" Width="1.5" PointX="9" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.route_s" Width="1.5" PointX="13.5" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.sales_history" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.suppliers" Width="1.5" PointX="1.5" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SalePointModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="SalePointModel.fk_purchase" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_supplier_payable" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_client_rece" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_purchase_rece" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_bill_history" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_bill_requi" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_client_bill" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_product" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_client" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_client_history" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_employees" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_person" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_familyProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_product_history" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_product_requi" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_supplier" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_order" ManuallyRouted="false" />
-        <AssociationConnector Association="SalePointModel.fk_type" ManuallyRouted="false" />
+      <Diagram DiagramId="dc1b029241d44d15a5fb5df8c18bc28b" Name="Diagrama1">
+        <EntityTypeShape EntityType="SalePointModel.EMPLOYEES" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="SalePointModel.fk_post" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

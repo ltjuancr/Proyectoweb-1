@@ -6,479 +6,46 @@
     <edmx:StorageModels>
       <Schema Namespace="SalePointModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="SalePointModelStoreContainer">
-          <EntitySet Name="accounts_payable" EntityType="SalePointModel.Store.accounts_payable" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="accounts_receivable" EntityType="SalePointModel.Store.accounts_receivable" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="bills" EntityType="SalePointModel.Store.bills" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="clients" EntityType="SalePointModel.Store.clients" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.Store.EMPLOYEES" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="family_product" EntityType="SalePointModel.Store.family_product" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="products" EntityType="SalePointModel.Store.products" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="requisition" EntityType="SalePointModel.Store.requisition" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="requisition_type" EntityType="SalePointModel.Store.requisition_type" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="route_s" EntityType="SalePointModel.Store.route_s" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sales_history" EntityType="SalePointModel.Store.sales_history" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="suppliers" EntityType="SalePointModel.Store.suppliers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="SalePointModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="fk_bill_history" Association="SalePointModel.Store.fk_bill_history">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_bill_requi" Association="SalePointModel.Store.fk_bill_requi">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="requisition" EntitySet="requisition" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client" Association="SalePointModel.Store.fk_client">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_bill" Association="SalePointModel.Store.fk_client_bill">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="bills" EntitySet="bills" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_history" Association="SalePointModel.Store.fk_client_history">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_rece" Association="SalePointModel.Store.fk_client_rece">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="accounts_receivable" EntitySet="accounts_receivable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_employees" Association="SalePointModel.Store.fk_employees">
+          <EntitySet Name="postType" EntityType="SalePointModel.Store.postType" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_post" Association="SalePointModel.Store.fk_post">
+            <End Role="postType" EntitySet="postType" />
             <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_familyProduct" Association="SalePointModel.Store.fk_familyProduct">
-            <End Role="family_product" EntitySet="family_product" />
-            <End Role="products" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order" Association="SalePointModel.Store.fk_order">
-            <End Role="requisition" EntitySet="requisition" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_person" Association="SalePointModel.Store.fk_person">
-            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
-            <End Role="requisition_type" EntitySet="requisition_type" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product" Association="SalePointModel.Store.fk_product">
-            <End Role="products" EntitySet="products" />
-            <End Role="bills" EntitySet="bills" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_history" Association="SalePointModel.Store.fk_product_history">
-            <End Role="products" EntitySet="products" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_requi" Association="SalePointModel.Store.fk_product_requi">
-            <End Role="products" EntitySet="products" />
-            <End Role="requisition" EntitySet="requisition" />
-          </AssociationSet>
-          <AssociationSet Name="fk_purchase" Association="SalePointModel.Store.fk_purchase">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="accounts_payable" EntitySet="accounts_payable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_purchase_rece" Association="SalePointModel.Store.fk_purchase_rece">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="accounts_receivable" EntitySet="accounts_receivable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_supplier" Association="SalePointModel.Store.fk_supplier">
-            <End Role="suppliers" EntitySet="suppliers" />
-            <End Role="products" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="fk_supplier_payable" Association="SalePointModel.Store.fk_supplier_payable">
-            <End Role="suppliers" EntitySet="suppliers" />
-            <End Role="accounts_payable" EntitySet="accounts_payable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_type" Association="SalePointModel.Store.fk_type">
-            <End Role="requisition_type" EntitySet="requisition_type" />
-            <End Role="requisition" EntitySet="requisition" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="accounts_payable">
-          <Key>
-            <PropertyRef Name="accountsPayable_code" />
-          </Key>
-          <Property Name="accountsPayable_code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="purchase_code" Type="int" Nullable="false" />
-          <Property Name="pay_supplier" Type="int" Nullable="false" />
-          <Property Name="was_paid" Type="float" />
-          <Property Name="outstanding_balance" Type="float" />
-          <Property Name="credit_time" Type="varchar" MaxLength="50" />
-          <Property Name="present_date" Type="date" />
-          <Property Name="sstate" Type="varchar" MaxLength="50" />
-          <Property Name="pay_date" Type="date" />
-          <Property Name="made_by" Type="varchar" MaxLength="50" />
-          <Property Name="date_cancellation" Type="date" />
-        </EntityType>
-        <EntityType Name="accounts_receivable">
-          <Key>
-            <PropertyRef Name="accountsReceivable_id" />
-          </Key>
-          <Property Name="accountsReceivable_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="purchase_code" Type="int" Nullable="false" />
-          <Property Name="client_debtor" Type="int" Nullable="false" />
-          <Property Name="client_name" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="paid" Type="float" />
-          <Property Name="outstanding_balance" Type="float" />
-          <Property Name="credit_time" Type="varchar" MaxLength="50" />
-          <Property Name="present_date" Type="date" />
-          <Property Name="state" Type="varchar" MaxLength="50" />
-          <Property Name="pay_date" Type="date" />
-          <Property Name="made_by" Type="varchar" MaxLength="50" />
-          <Property Name="date_cancellation" Type="date" />
-        </EntityType>
-        <EntityType Name="bills">
-          <Key>
-            <PropertyRef Name="bill_id" />
-          </Key>
-          <Property Name="bill_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_client" Type="int" Nullable="false" />
-          <Property Name="person_name" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="present_date" Type="date" />
-          <Property Name="ddescription" Type="varchar" MaxLength="1000" />
-          <Property Name="payment_term" Type="varchar" MaxLength="50" />
-          <Property Name="payment_date" Type="date" />
-          <Property Name="product_code" Type="int" Nullable="false" />
-          <Property Name="product_name" Type="varchar" MaxLength="50" />
-          <Property Name="amount" Type="int" />
-          <Property Name="price" Type="int" />
-          <Property Name="amount_total" Type="int" />
-          <Property Name="total_taxes" Type="int" />
-          <Property Name="total_withTaxes" Type="int" />
-          <Property Name="sstate" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="clients">
-          <Key>
-            <PropertyRef Name="client_id" />
-          </Key>
-          <Property Name="client_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_person" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="delivery_address" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="EMPLOYEES">
           <Key>
             <PropertyRef Name="identification" />
           </Key>
+          <Property Name="id_employess" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="identification" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="last_name" Type="varchar" MaxLength="50" />
           <Property Name="age" Type="int" />
           <Property Name="license" Type="varchar" MaxLength="50" />
-          <Property Name="password1" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="100" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
           <Property Name="postType" Type="int" />
-          <Property Name="salary" Type="float" />
-          <Property Name="a_ddress" Type="varchar" MaxLength="50" />
-          <Property Name="email" Type="varchar" MaxLength="20" />
+          <Property Name="salary" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="family_product">
+        <EntityType Name="postType">
           <Key>
-            <PropertyRef Name="family_code" />
+            <PropertyRef Name="id_postType" />
           </Key>
-          <Property Name="family_code" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="familyProduct_name" Type="varchar" MaxLength="100" />
+          <Property Name="id_postType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
-        <EntityType Name="products">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="familyProduct_code" Type="int" Nullable="false" />
-          <Property Name="product_name" Type="varchar" MaxLength="50" />
-          <Property Name="product_description" Type="varchar" MaxLength="1000" />
-          <Property Name="unit_price" Type="float" />
-          <Property Name="expiration_date" Type="date" />
-          <Property Name="existence" Type="int" />
-          <Property Name="minimum_num" Type="int" />
-          <Property Name="sstate" Type="varchar" MaxLength="50" />
-          <Property Name="unitMeasure" Type="varchar" MaxLength="50" />
-          <Property Name="majorSupplier_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="requisition">
-          <Key>
-            <PropertyRef Name="requisition_id" />
-          </Key>
-          <Property Name="requisition_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="requisition_type" Type="int" Nullable="false" />
-          <Property Name="product_code" Type="int" Nullable="false" />
-          <Property Name="quantity_toBuy" Type="int" />
-          <Property Name="description" Type="varchar" MaxLength="1000" />
-          <Property Name="order_priority" Type="varchar" MaxLength="10" />
-          <Property Name="state" Type="varchar" MaxLength="10" />
-          <Property Name="bill_code" Type="int" />
-        </EntityType>
-        <EntityType Name="requisition_type">
-          <Key>
-            <PropertyRef Name="requisitionType_id" />
-          </Key>
-          <Property Name="requisitionType_id" Type="int" Nullable="false" />
-          <Property Name="name_type" Type="varchar" MaxLength="100" />
-          <Property Name="id_person" Type="varchar" Nullable="false" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="route_s">
-          <Key>
-            <PropertyRef Name="route_id" />
-          </Key>
-          <Property Name="route_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_bodega" Type="varchar" MaxLength="50" />
-          <Property Name="origin" Type="varchar" MaxLength="100" />
-          <Property Name="destination" Type="varchar" MaxLength="100" />
-          <Property Name="description" Type="varchar" MaxLength="1000" />
-          <Property Name="address" Type="varchar" MaxLength="1000" />
-          <Property Name="load_download" Type="varchar" MaxLength="50" />
-          <Property Name="state" Type="varchar" MaxLength="50" />
-          <Property Name="employees_id" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="order_cod" Type="int" Nullable="false" />
-          <Property Name="client_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sales_history">
-          <Key>
-            <PropertyRef Name="salesHistory_id" />
-          </Key>
-          <Property Name="salesHistory_id" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="client_id" Type="int" Nullable="false" />
-          <Property Name="client_name" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="bill_code" Type="int" Nullable="false" />
-          <Property Name="present_date" Type="date" />
-          <Property Name="description" Type="varchar" MaxLength="1000" />
-          <Property Name="payment_date" Type="date" />
-          <Property Name="product_code" Type="int" Nullable="false" />
-          <Property Name="product_name" Type="varchar" MaxLength="50" />
-          <Property Name="total_withTaxes" Type="int" />
-        </EntityType>
-        <EntityType Name="suppliers">
-          <Key>
-            <PropertyRef Name="supplier_id" />
-          </Key>
-          <Property Name="supplier_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="company" Type="varchar" MaxLength="50" />
-          <Property Name="company_account" Type="varchar" MaxLength="50" />
-          <Property Name="phone" Type="varchar" MaxLength="50" />
-          <Property Name="a_ddress" Type="varchar" MaxLength="50" />
-          <Property Name="email" Type="varchar" MaxLength="20" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <Association Name="fk_bill_history">
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.Store.sales_history" Multiplicity="*" />
+        <Association Name="fk_post">
+          <End Role="postType" Type="SalePointModel.Store.postType" Multiplicity="0..1" />
+          <End Role="EMPLOYEES" Type="SalePointModel.Store.EMPLOYEES" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
+            <Principal Role="postType">
+              <PropertyRef Name="id_postType" />
             </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="bill_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_bill_requi">
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="0..1" />
-          <End Role="requisition" Type="SalePointModel.Store.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="bill_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client">
-          <End Role="clients" Type="SalePointModel.Store.clients" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.Store.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_bill">
-          <End Role="clients" Type="SalePointModel.Store.clients" Multiplicity="1" />
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="bills">
-              <PropertyRef Name="id_client" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_history">
-          <End Role="clients" Type="SalePointModel.Store.clients" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.Store.sales_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_rece">
-          <End Role="clients" Type="SalePointModel.Store.clients" Multiplicity="1" />
-          <End Role="accounts_receivable" Type="SalePointModel.Store.accounts_receivable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="accounts_receivable">
-              <PropertyRef Name="client_debtor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_employees">
-          <End Role="EMPLOYEES" Type="SalePointModel.Store.EMPLOYEES" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.Store.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EMPLOYEES">
-              <PropertyRef Name="identification" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="employees_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_familyProduct">
-          <End Role="family_product" Type="SalePointModel.Store.family_product" Multiplicity="1" />
-          <End Role="products" Type="SalePointModel.Store.products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="family_product">
-              <PropertyRef Name="family_code" />
-            </Principal>
-            <Dependent Role="products">
-              <PropertyRef Name="familyProduct_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order">
-          <End Role="requisition" Type="SalePointModel.Store.requisition" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.Store.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="requisition">
-              <PropertyRef Name="requisition_id" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="order_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_person">
-          <End Role="EMPLOYEES" Type="SalePointModel.Store.EMPLOYEES" Multiplicity="1" />
-          <End Role="requisition_type" Type="SalePointModel.Store.requisition_type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EMPLOYEES">
-              <PropertyRef Name="identification" />
-            </Principal>
-            <Dependent Role="requisition_type">
-              <PropertyRef Name="id_person" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product">
-          <End Role="products" Type="SalePointModel.Store.products" Multiplicity="1" />
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="bills">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_history">
-          <End Role="products" Type="SalePointModel.Store.products" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.Store.sales_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_requi">
-          <End Role="products" Type="SalePointModel.Store.products" Multiplicity="1" />
-          <End Role="requisition" Type="SalePointModel.Store.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_purchase">
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="1" />
-          <End Role="accounts_payable" Type="SalePointModel.Store.accounts_payable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="accounts_payable">
-              <PropertyRef Name="purchase_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_purchase_rece">
-          <End Role="bills" Type="SalePointModel.Store.bills" Multiplicity="1" />
-          <End Role="accounts_receivable" Type="SalePointModel.Store.accounts_receivable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="accounts_receivable">
-              <PropertyRef Name="purchase_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_supplier">
-          <End Role="suppliers" Type="SalePointModel.Store.suppliers" Multiplicity="1" />
-          <End Role="products" Type="SalePointModel.Store.products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="suppliers">
-              <PropertyRef Name="supplier_id" />
-            </Principal>
-            <Dependent Role="products">
-              <PropertyRef Name="majorSupplier_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_supplier_payable">
-          <End Role="suppliers" Type="SalePointModel.Store.suppliers" Multiplicity="1" />
-          <End Role="accounts_payable" Type="SalePointModel.Store.accounts_payable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="suppliers">
-              <PropertyRef Name="supplier_id" />
-            </Principal>
-            <Dependent Role="accounts_payable">
-              <PropertyRef Name="pay_supplier" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_type">
-          <End Role="requisition_type" Type="SalePointModel.Store.requisition_type" Multiplicity="1" />
-          <End Role="requisition" Type="SalePointModel.Store.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="requisition_type">
-              <PropertyRef Name="requisitionType_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="requisition_type" />
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="postType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -488,515 +55,48 @@
     <edmx:ConceptualModels>
       <Schema Namespace="SalePointModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SalePointEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="accounts_payable" EntityType="SalePointModel.accounts_payable" />
-          <EntitySet Name="accounts_receivable" EntityType="SalePointModel.accounts_receivable" />
-          <EntitySet Name="bills" EntityType="SalePointModel.bills" />
-          <EntitySet Name="clients" EntityType="SalePointModel.clients" />
           <EntitySet Name="EMPLOYEES" EntityType="SalePointModel.EMPLOYEES" />
-          <EntitySet Name="family_product" EntityType="SalePointModel.family_product" />
-          <EntitySet Name="products" EntityType="SalePointModel.products" />
-          <EntitySet Name="requisition" EntityType="SalePointModel.requisition" />
-          <EntitySet Name="requisition_type" EntityType="SalePointModel.requisition_type" />
-          <EntitySet Name="route_s" EntityType="SalePointModel.route_s" />
-          <EntitySet Name="sales_history" EntityType="SalePointModel.sales_history" />
-          <EntitySet Name="suppliers" EntityType="SalePointModel.suppliers" />
-          <EntitySet Name="sysdiagrams" EntityType="SalePointModel.sysdiagrams" />
-          <AssociationSet Name="fk_purchase" Association="SalePointModel.fk_purchase">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="accounts_payable" EntitySet="accounts_payable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_supplier_payable" Association="SalePointModel.fk_supplier_payable">
-            <End Role="suppliers" EntitySet="suppliers" />
-            <End Role="accounts_payable" EntitySet="accounts_payable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_rece" Association="SalePointModel.fk_client_rece">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="accounts_receivable" EntitySet="accounts_receivable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_purchase_rece" Association="SalePointModel.fk_purchase_rece">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="accounts_receivable" EntitySet="accounts_receivable" />
-          </AssociationSet>
-          <AssociationSet Name="fk_bill_history" Association="SalePointModel.fk_bill_history">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_bill_requi" Association="SalePointModel.fk_bill_requi">
-            <End Role="bills" EntitySet="bills" />
-            <End Role="requisition" EntitySet="requisition" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_bill" Association="SalePointModel.fk_client_bill">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="bills" EntitySet="bills" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product" Association="SalePointModel.fk_product">
-            <End Role="products" EntitySet="products" />
-            <End Role="bills" EntitySet="bills" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client" Association="SalePointModel.fk_client">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_client_history" Association="SalePointModel.fk_client_history">
-            <End Role="clients" EntitySet="clients" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_employees" Association="SalePointModel.fk_employees">
+          <EntitySet Name="postType" EntityType="SalePointModel.postType" />
+          <AssociationSet Name="fk_post" Association="SalePointModel.fk_post">
+            <End Role="postType" EntitySet="postType" />
             <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_person" Association="SalePointModel.fk_person">
-            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
-            <End Role="requisition_type" EntitySet="requisition_type" />
-          </AssociationSet>
-          <AssociationSet Name="fk_familyProduct" Association="SalePointModel.fk_familyProduct">
-            <End Role="family_product" EntitySet="family_product" />
-            <End Role="products" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_history" Association="SalePointModel.fk_product_history">
-            <End Role="products" EntitySet="products" />
-            <End Role="sales_history" EntitySet="sales_history" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_requi" Association="SalePointModel.fk_product_requi">
-            <End Role="products" EntitySet="products" />
-            <End Role="requisition" EntitySet="requisition" />
-          </AssociationSet>
-          <AssociationSet Name="fk_supplier" Association="SalePointModel.fk_supplier">
-            <End Role="suppliers" EntitySet="suppliers" />
-            <End Role="products" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order" Association="SalePointModel.fk_order">
-            <End Role="requisition" EntitySet="requisition" />
-            <End Role="route_s" EntitySet="route_s" />
-          </AssociationSet>
-          <AssociationSet Name="fk_type" Association="SalePointModel.fk_type">
-            <End Role="requisition_type" EntitySet="requisition_type" />
-            <End Role="requisition" EntitySet="requisition" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="accounts_payable">
-          <Key>
-            <PropertyRef Name="accountsPayable_code" />
-          </Key>
-          <Property Name="accountsPayable_code" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="purchase_code" Type="Int32" Nullable="false" />
-          <Property Name="pay_supplier" Type="Int32" Nullable="false" />
-          <Property Name="was_paid" Type="Double" />
-          <Property Name="outstanding_balance" Type="Double" />
-          <Property Name="credit_time" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="present_date" Type="DateTime" Precision="0" />
-          <Property Name="sstate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="pay_date" Type="DateTime" Precision="0" />
-          <Property Name="made_by" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="date_cancellation" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_purchase" FromRole="accounts_payable" ToRole="bills" />
-          <NavigationProperty Name="suppliers" Relationship="SalePointModel.fk_supplier_payable" FromRole="accounts_payable" ToRole="suppliers" />
-        </EntityType>
-        <EntityType Name="accounts_receivable">
-          <Key>
-            <PropertyRef Name="accountsReceivable_id" />
-          </Key>
-          <Property Name="accountsReceivable_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="purchase_code" Type="Int32" Nullable="false" />
-          <Property Name="client_debtor" Type="Int32" Nullable="false" />
-          <Property Name="client_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="paid" Type="Double" />
-          <Property Name="outstanding_balance" Type="Double" />
-          <Property Name="credit_time" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="present_date" Type="DateTime" Precision="0" />
-          <Property Name="state" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="pay_date" Type="DateTime" Precision="0" />
-          <Property Name="made_by" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="date_cancellation" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="clients" Relationship="SalePointModel.fk_client_rece" FromRole="accounts_receivable" ToRole="clients" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_purchase_rece" FromRole="accounts_receivable" ToRole="bills" />
-        </EntityType>
-        <EntityType Name="bills">
-          <Key>
-            <PropertyRef Name="bill_id" />
-          </Key>
-          <Property Name="bill_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="id_client" Type="Int32" Nullable="false" />
-          <Property Name="person_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="present_date" Type="DateTime" Precision="0" />
-          <Property Name="ddescription" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="payment_term" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="payment_date" Type="DateTime" Precision="0" />
-          <Property Name="product_code" Type="Int32" Nullable="false" />
-          <Property Name="product_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="price" Type="Int32" />
-          <Property Name="amount_total" Type="Int32" />
-          <Property Name="total_taxes" Type="Int32" />
-          <Property Name="total_withTaxes" Type="Int32" />
-          <Property Name="sstate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_purchase" FromRole="bills" ToRole="accounts_payable" />
-          <NavigationProperty Name="accounts_receivable" Relationship="SalePointModel.fk_purchase_rece" FromRole="bills" ToRole="accounts_receivable" />
-          <NavigationProperty Name="sales_history" Relationship="SalePointModel.fk_bill_history" FromRole="bills" ToRole="sales_history" />
-          <NavigationProperty Name="requisition" Relationship="SalePointModel.fk_bill_requi" FromRole="bills" ToRole="requisition" />
-          <NavigationProperty Name="clients" Relationship="SalePointModel.fk_client_bill" FromRole="bills" ToRole="clients" />
-          <NavigationProperty Name="products" Relationship="SalePointModel.fk_product" FromRole="bills" ToRole="products" />
-        </EntityType>
-        <EntityType Name="clients">
-          <Key>
-            <PropertyRef Name="client_id" />
-          </Key>
-          <Property Name="client_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="id_person" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="delivery_address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="accounts_receivable" Relationship="SalePointModel.fk_client_rece" FromRole="clients" ToRole="accounts_receivable" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_client_bill" FromRole="clients" ToRole="bills" />
-          <NavigationProperty Name="route_s" Relationship="SalePointModel.fk_client" FromRole="clients" ToRole="route_s" />
-          <NavigationProperty Name="sales_history" Relationship="SalePointModel.fk_client_history" FromRole="clients" ToRole="sales_history" />
-        </EntityType>
         <EntityType Name="EMPLOYEES">
           <Key>
             <PropertyRef Name="identification" />
           </Key>
+          <Property Name="id_employess" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="identification" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="last_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="age" Type="Int32" />
           <Property Name="license" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="password1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="postType" Type="Int32" />
-          <Property Name="salary" Type="Double" />
-          <Property Name="a_ddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="route_s" Relationship="SalePointModel.fk_employees" FromRole="EMPLOYEES" ToRole="route_s" />
-          <NavigationProperty Name="requisition_type" Relationship="SalePointModel.fk_person" FromRole="EMPLOYEES" ToRole="requisition_type" />
+          <Property Name="salary" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="postType1" Relationship="SalePointModel.fk_post" FromRole="EMPLOYEES" ToRole="postType" />
         </EntityType>
-        <EntityType Name="family_product">
+        <EntityType Name="postType">
           <Key>
-            <PropertyRef Name="family_code" />
+            <PropertyRef Name="id_postType" />
           </Key>
-          <Property Name="family_code" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="familyProduct_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="products" Relationship="SalePointModel.fk_familyProduct" FromRole="family_product" ToRole="products" />
+          <Property Name="id_postType" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="EMPLOYEES" Relationship="SalePointModel.fk_post" FromRole="postType" ToRole="EMPLOYEES" />
         </EntityType>
-        <EntityType Name="products">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="familyProduct_code" Type="Int32" Nullable="false" />
-          <Property Name="product_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="product_description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="unit_price" Type="Double" />
-          <Property Name="expiration_date" Type="DateTime" Precision="0" />
-          <Property Name="existence" Type="Int32" />
-          <Property Name="minimum_num" Type="Int32" />
-          <Property Name="sstate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="unitMeasure" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="majorSupplier_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_product" FromRole="products" ToRole="bills" />
-          <NavigationProperty Name="family_product" Relationship="SalePointModel.fk_familyProduct" FromRole="products" ToRole="family_product" />
-          <NavigationProperty Name="sales_history" Relationship="SalePointModel.fk_product_history" FromRole="products" ToRole="sales_history" />
-          <NavigationProperty Name="requisition" Relationship="SalePointModel.fk_product_requi" FromRole="products" ToRole="requisition" />
-          <NavigationProperty Name="suppliers" Relationship="SalePointModel.fk_supplier" FromRole="products" ToRole="suppliers" />
-        </EntityType>
-        <EntityType Name="requisition">
-          <Key>
-            <PropertyRef Name="requisition_id" />
-          </Key>
-          <Property Name="requisition_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="requisition_type" Type="Int32" Nullable="false" />
-          <Property Name="product_code" Type="Int32" Nullable="false" />
-          <Property Name="quantity_toBuy" Type="Int32" />
-          <Property Name="description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="order_priority" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="bill_code" Type="Int32" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_bill_requi" FromRole="requisition" ToRole="bills" />
-          <NavigationProperty Name="products" Relationship="SalePointModel.fk_product_requi" FromRole="requisition" ToRole="products" />
-          <NavigationProperty Name="route_s" Relationship="SalePointModel.fk_order" FromRole="requisition" ToRole="route_s" />
-          <NavigationProperty Name="requisition_type1" Relationship="SalePointModel.fk_type" FromRole="requisition" ToRole="requisition_type" />
-        </EntityType>
-        <EntityType Name="requisition_type">
-          <Key>
-            <PropertyRef Name="requisitionType_id" />
-          </Key>
-          <Property Name="requisitionType_id" Type="Int32" Nullable="false" />
-          <Property Name="name_type" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="id_person" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="EMPLOYEES" Relationship="SalePointModel.fk_person" FromRole="requisition_type" ToRole="EMPLOYEES" />
-          <NavigationProperty Name="requisition" Relationship="SalePointModel.fk_type" FromRole="requisition_type" ToRole="requisition" />
-        </EntityType>
-        <EntityType Name="route_s">
-          <Key>
-            <PropertyRef Name="route_id" />
-          </Key>
-          <Property Name="route_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_bodega" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="origin" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="destination" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="address" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="load_download" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="state" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="employees_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="order_cod" Type="Int32" Nullable="false" />
-          <Property Name="client_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="clients" Relationship="SalePointModel.fk_client" FromRole="route_s" ToRole="clients" />
-          <NavigationProperty Name="EMPLOYEES" Relationship="SalePointModel.fk_employees" FromRole="route_s" ToRole="EMPLOYEES" />
-          <NavigationProperty Name="requisition" Relationship="SalePointModel.fk_order" FromRole="route_s" ToRole="requisition" />
-        </EntityType>
-        <EntityType Name="sales_history">
-          <Key>
-            <PropertyRef Name="salesHistory_id" />
-          </Key>
-          <Property Name="salesHistory_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="client_id" Type="Int32" Nullable="false" />
-          <Property Name="client_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="bill_code" Type="Int32" Nullable="false" />
-          <Property Name="present_date" Type="DateTime" Precision="0" />
-          <Property Name="description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
-          <Property Name="payment_date" Type="DateTime" Precision="0" />
-          <Property Name="product_code" Type="Int32" Nullable="false" />
-          <Property Name="product_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="total_withTaxes" Type="Int32" />
-          <NavigationProperty Name="bills" Relationship="SalePointModel.fk_bill_history" FromRole="sales_history" ToRole="bills" />
-          <NavigationProperty Name="clients" Relationship="SalePointModel.fk_client_history" FromRole="sales_history" ToRole="clients" />
-          <NavigationProperty Name="products" Relationship="SalePointModel.fk_product_history" FromRole="sales_history" ToRole="products" />
-        </EntityType>
-        <EntityType Name="suppliers">
-          <Key>
-            <PropertyRef Name="supplier_id" />
-          </Key>
-          <Property Name="supplier_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="legalIdentification_card" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="company" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="company_account" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="a_ddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_supplier_payable" FromRole="suppliers" ToRole="accounts_payable" />
-          <NavigationProperty Name="products" Relationship="SalePointModel.fk_supplier" FromRole="suppliers" ToRole="products" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="fk_purchase">
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="1" />
-          <End Role="accounts_payable" Type="SalePointModel.accounts_payable" Multiplicity="*" />
+        <Association Name="fk_post">
+          <End Role="postType" Type="SalePointModel.postType" Multiplicity="0..1" />
+          <End Role="EMPLOYEES" Type="SalePointModel.EMPLOYEES" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
+            <Principal Role="postType">
+              <PropertyRef Name="id_postType" />
             </Principal>
-            <Dependent Role="accounts_payable">
-              <PropertyRef Name="purchase_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_supplier_payable">
-          <End Role="suppliers" Type="SalePointModel.suppliers" Multiplicity="1" />
-          <End Role="accounts_payable" Type="SalePointModel.accounts_payable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="suppliers">
-              <PropertyRef Name="supplier_id" />
-            </Principal>
-            <Dependent Role="accounts_payable">
-              <PropertyRef Name="pay_supplier" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_rece">
-          <End Role="clients" Type="SalePointModel.clients" Multiplicity="1" />
-          <End Role="accounts_receivable" Type="SalePointModel.accounts_receivable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="accounts_receivable">
-              <PropertyRef Name="client_debtor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_purchase_rece">
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="1" />
-          <End Role="accounts_receivable" Type="SalePointModel.accounts_receivable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="accounts_receivable">
-              <PropertyRef Name="purchase_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_bill_history">
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.sales_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="bill_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_bill_requi">
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="0..1" />
-          <End Role="requisition" Type="SalePointModel.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="bills">
-              <PropertyRef Name="bill_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="bill_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_bill">
-          <End Role="clients" Type="SalePointModel.clients" Multiplicity="1" />
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="bills">
-              <PropertyRef Name="id_client" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product">
-          <End Role="products" Type="SalePointModel.products" Multiplicity="1" />
-          <End Role="bills" Type="SalePointModel.bills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="bills">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client">
-          <End Role="clients" Type="SalePointModel.clients" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_client_history">
-          <End Role="clients" Type="SalePointModel.clients" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.sales_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="clients">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_employees">
-          <End Role="EMPLOYEES" Type="SalePointModel.EMPLOYEES" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EMPLOYEES">
-              <PropertyRef Name="identification" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="employees_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_person">
-          <End Role="EMPLOYEES" Type="SalePointModel.EMPLOYEES" Multiplicity="1" />
-          <End Role="requisition_type" Type="SalePointModel.requisition_type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EMPLOYEES">
-              <PropertyRef Name="identification" />
-            </Principal>
-            <Dependent Role="requisition_type">
-              <PropertyRef Name="id_person" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_familyProduct">
-          <End Role="family_product" Type="SalePointModel.family_product" Multiplicity="1" />
-          <End Role="products" Type="SalePointModel.products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="family_product">
-              <PropertyRef Name="family_code" />
-            </Principal>
-            <Dependent Role="products">
-              <PropertyRef Name="familyProduct_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_history">
-          <End Role="products" Type="SalePointModel.products" Multiplicity="1" />
-          <End Role="sales_history" Type="SalePointModel.sales_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="sales_history">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_requi">
-          <End Role="products" Type="SalePointModel.products" Multiplicity="1" />
-          <End Role="requisition" Type="SalePointModel.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="product_code" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_supplier">
-          <End Role="suppliers" Type="SalePointModel.suppliers" Multiplicity="1" />
-          <End Role="products" Type="SalePointModel.products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="suppliers">
-              <PropertyRef Name="supplier_id" />
-            </Principal>
-            <Dependent Role="products">
-              <PropertyRef Name="majorSupplier_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order">
-          <End Role="requisition" Type="SalePointModel.requisition" Multiplicity="1" />
-          <End Role="route_s" Type="SalePointModel.route_s" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="requisition">
-              <PropertyRef Name="requisition_id" />
-            </Principal>
-            <Dependent Role="route_s">
-              <PropertyRef Name="order_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_type">
-          <End Role="requisition_type" Type="SalePointModel.requisition_type" Multiplicity="1" />
-          <End Role="requisition" Type="SalePointModel.requisition" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="requisition_type">
-              <PropertyRef Name="requisitionType_id" />
-            </Principal>
-            <Dependent Role="requisition">
-              <PropertyRef Name="requisition_type" />
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="postType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1006,190 +106,29 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SalePointModelStoreContainer" CdmEntityContainer="SalePointEntities">
-          <EntitySetMapping Name="accounts_payable">
-            <EntityTypeMapping TypeName="SalePointModel.accounts_payable">
-              <MappingFragment StoreEntitySet="accounts_payable">
-                <ScalarProperty Name="accountsPayable_code" ColumnName="accountsPayable_code" />
-                <ScalarProperty Name="purchase_code" ColumnName="purchase_code" />
-                <ScalarProperty Name="pay_supplier" ColumnName="pay_supplier" />
-                <ScalarProperty Name="was_paid" ColumnName="was_paid" />
-                <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
-                <ScalarProperty Name="credit_time" ColumnName="credit_time" />
-                <ScalarProperty Name="present_date" ColumnName="present_date" />
-                <ScalarProperty Name="sstate" ColumnName="sstate" />
-                <ScalarProperty Name="pay_date" ColumnName="pay_date" />
-                <ScalarProperty Name="made_by" ColumnName="made_by" />
-                <ScalarProperty Name="date_cancellation" ColumnName="date_cancellation" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="accounts_receivable">
-            <EntityTypeMapping TypeName="SalePointModel.accounts_receivable">
-              <MappingFragment StoreEntitySet="accounts_receivable">
-                <ScalarProperty Name="accountsReceivable_id" ColumnName="accountsReceivable_id" />
-                <ScalarProperty Name="purchase_code" ColumnName="purchase_code" />
-                <ScalarProperty Name="client_debtor" ColumnName="client_debtor" />
-                <ScalarProperty Name="client_name" ColumnName="client_name" />
-                <ScalarProperty Name="paid" ColumnName="paid" />
-                <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
-                <ScalarProperty Name="credit_time" ColumnName="credit_time" />
-                <ScalarProperty Name="present_date" ColumnName="present_date" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="pay_date" ColumnName="pay_date" />
-                <ScalarProperty Name="made_by" ColumnName="made_by" />
-                <ScalarProperty Name="date_cancellation" ColumnName="date_cancellation" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="bills">
-            <EntityTypeMapping TypeName="SalePointModel.bills">
-              <MappingFragment StoreEntitySet="bills">
-                <ScalarProperty Name="bill_id" ColumnName="bill_id" />
-                <ScalarProperty Name="id_client" ColumnName="id_client" />
-                <ScalarProperty Name="person_name" ColumnName="person_name" />
-                <ScalarProperty Name="present_date" ColumnName="present_date" />
-                <ScalarProperty Name="ddescription" ColumnName="ddescription" />
-                <ScalarProperty Name="payment_term" ColumnName="payment_term" />
-                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
-                <ScalarProperty Name="product_code" ColumnName="product_code" />
-                <ScalarProperty Name="product_name" ColumnName="product_name" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="amount_total" ColumnName="amount_total" />
-                <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
-                <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
-                <ScalarProperty Name="sstate" ColumnName="sstate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="clients">
-            <EntityTypeMapping TypeName="SalePointModel.clients">
-              <MappingFragment StoreEntitySet="clients">
-                <ScalarProperty Name="client_id" ColumnName="client_id" />
-                <ScalarProperty Name="id_person" ColumnName="id_person" />
-                <ScalarProperty Name="delivery_address" ColumnName="delivery_address" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="EMPLOYEES">
             <EntityTypeMapping TypeName="SalePointModel.EMPLOYEES">
               <MappingFragment StoreEntitySet="EMPLOYEES">
+                <ScalarProperty Name="id_employess" ColumnName="id_employess" />
                 <ScalarProperty Name="identification" ColumnName="identification" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="license" ColumnName="license" />
-                <ScalarProperty Name="password1" ColumnName="password1" />
+                <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="postType" ColumnName="postType" />
                 <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="a_ddress" ColumnName="a_ddress" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="family_product">
-            <EntityTypeMapping TypeName="SalePointModel.family_product">
-              <MappingFragment StoreEntitySet="family_product">
-                <ScalarProperty Name="family_code" ColumnName="family_code" />
-                <ScalarProperty Name="familyProduct_name" ColumnName="familyProduct_name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="SalePointModel.products">
-              <MappingFragment StoreEntitySet="products">
-                <ScalarProperty Name="product_id" ColumnName="product_id" />
-                <ScalarProperty Name="familyProduct_code" ColumnName="familyProduct_code" />
-                <ScalarProperty Name="product_name" ColumnName="product_name" />
-                <ScalarProperty Name="product_description" ColumnName="product_description" />
-                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
-                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
-                <ScalarProperty Name="existence" ColumnName="existence" />
-                <ScalarProperty Name="minimum_num" ColumnName="minimum_num" />
-                <ScalarProperty Name="sstate" ColumnName="sstate" />
-                <ScalarProperty Name="unitMeasure" ColumnName="unitMeasure" />
-                <ScalarProperty Name="majorSupplier_id" ColumnName="majorSupplier_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="requisition">
-            <EntityTypeMapping TypeName="SalePointModel.requisition">
-              <MappingFragment StoreEntitySet="requisition">
-                <ScalarProperty Name="requisition_id" ColumnName="requisition_id" />
-                <ScalarProperty Name="requisition_type" ColumnName="requisition_type" />
-                <ScalarProperty Name="product_code" ColumnName="product_code" />
-                <ScalarProperty Name="quantity_toBuy" ColumnName="quantity_toBuy" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="order_priority" ColumnName="order_priority" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="bill_code" ColumnName="bill_code" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="requisition_type">
-            <EntityTypeMapping TypeName="SalePointModel.requisition_type">
-              <MappingFragment StoreEntitySet="requisition_type">
-                <ScalarProperty Name="requisitionType_id" ColumnName="requisitionType_id" />
-                <ScalarProperty Name="name_type" ColumnName="name_type" />
-                <ScalarProperty Name="id_person" ColumnName="id_person" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="route_s">
-            <EntityTypeMapping TypeName="SalePointModel.route_s">
-              <MappingFragment StoreEntitySet="route_s">
-                <ScalarProperty Name="route_id" ColumnName="route_id" />
-                <ScalarProperty Name="nombre_bodega" ColumnName="nombre_bodega" />
-                <ScalarProperty Name="origin" ColumnName="origin" />
-                <ScalarProperty Name="destination" ColumnName="destination" />
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="load_download" ColumnName="load_download" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="employees_id" ColumnName="employees_id" />
-                <ScalarProperty Name="order_cod" ColumnName="order_cod" />
-                <ScalarProperty Name="client_id" ColumnName="client_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sales_history">
-            <EntityTypeMapping TypeName="SalePointModel.sales_history">
-              <MappingFragment StoreEntitySet="sales_history">
-                <ScalarProperty Name="salesHistory_id" ColumnName="salesHistory_id" />
-                <ScalarProperty Name="client_id" ColumnName="client_id" />
-                <ScalarProperty Name="client_name" ColumnName="client_name" />
-                <ScalarProperty Name="bill_code" ColumnName="bill_code" />
-                <ScalarProperty Name="present_date" ColumnName="present_date" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
-                <ScalarProperty Name="product_code" ColumnName="product_code" />
-                <ScalarProperty Name="product_name" ColumnName="product_name" />
-                <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="suppliers">
-            <EntityTypeMapping TypeName="SalePointModel.suppliers">
-              <MappingFragment StoreEntitySet="suppliers">
-                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
-                <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
-                <ScalarProperty Name="company" ColumnName="company" />
-                <ScalarProperty Name="company_account" ColumnName="company_account" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="a_ddress" ColumnName="a_ddress" />
                 <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SalePointModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+          <EntitySetMapping Name="postType">
+            <EntityTypeMapping TypeName="SalePointModel.postType">
+              <MappingFragment StoreEntitySet="postType">
+                <ScalarProperty Name="id_postType" ColumnName="id_postType" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

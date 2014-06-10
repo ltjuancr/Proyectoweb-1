@@ -11,6 +11,7 @@ C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\EntityF
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Newtonsoft.Json.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Proyecto.DataAccess.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\System.Net.Http.Formatting.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\System.Web.Helpers.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\System.Web.Http.dll
@@ -24,6 +25,7 @@ C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\System.
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\WebGrease.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\WebMatrix.Data.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\WebMatrix.WebData.dll
+C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Proyecto.DataAccess.pdb
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\EntityFramework.xml
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Newtonsoft.Json.xml
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\System.Net.Http.Formatting.xml
@@ -61,5 +63,3 @@ C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\es\WebM
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\obj\Debug\MvcProyecto.csprojResolveAssemblyReference.cache
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\obj\Debug\MvcProyecto.dll
 C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\obj\Debug\MvcProyecto.pdb
-C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Proyecto.DataAccess.dll
-C:\Users\juan\Documents\GitHub\Proyectoweb-1\MvcProyecto\MvcProyecto\bin\Proyecto.DataAccess.pdb

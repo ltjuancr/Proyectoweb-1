@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B5DB57E0-B5CF-40FD-AED9-84773268EFAC}</ProjectGuid>
+    <ProjectGuid>{3D45BE6A-7B13-4695-ADEA-3AD759A673BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvcProyecto.Tests</RootNamespace>
@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcProyecto\MvcProyecto.csproj">
-      <Project>{66F2D65B-FB1B-403E-B2B1-84ED4DE9C242}</Project>
+      <Project>{8DC00A45-BB13-4B2A-AFF0-40BF0F5E0E5D}</Project>
       <Name>MvcProyecto</Name>
     </ProjectReference>
   </ItemGroup>

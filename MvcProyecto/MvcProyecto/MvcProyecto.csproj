@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{66F2D65B-FB1B-403E-B2B1-84ED4DE9C242}</ProjectGuid>
+    <ProjectGuid>{8DC00A45-BB13-4B2A-AFF0-40BF0F5E0E5D}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -162,8 +162,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\postTypeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,11 +282,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\postType\Index.cshtml" />
+    <Content Include="Views\postType\Details.cshtml" />
+    <Content Include="Views\postType\Create.cshtml" />
+    <Content Include="Views\postType\Edit.cshtml" />
+    <Content Include="Views\postType\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,7 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Proyecto.DataAccess\Proyecto.DataAccess.csproj">
-      <Project>{87f9225b-41f0-476c-bfff-9cff842c6caa}</Project>
+      <Project>{edfe01c4-84a4-4508-8b13-b5635477765a}</Project>
       <Name>Proyecto.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
@@ -316,7 +316,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>65245</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:63820/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

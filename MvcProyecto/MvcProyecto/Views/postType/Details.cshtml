@@ -1,0 +1,29 @@
+﻿@model Proyecto.DataAccess.postType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>postType</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_postType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_postType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

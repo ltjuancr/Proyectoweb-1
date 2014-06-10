@@ -14,25 +14,19 @@ namespace Proyecto.DataAccess
     
     public partial class EMPLOYEES
     {
-        public EMPLOYEES()
-        {
-            this.route_s = new HashSet<route_s>();
-            this.requisition_type = new HashSet<requisition_type>();
-        }
-    
+        public int id_employess { get; set; }
         public string identification { get; set; }
         public string name { get; set; }
         public string last_name { get; set; }
         public Nullable<int> age { get; set; }
         public string license { get; set; }
-        public string password1 { get; set; }
+        public string password { get; set; }
         public string phone { get; set; }
         public Nullable<int> postType { get; set; }
-        public Nullable<double> salary { get; set; }
-        public string a_ddress { get; set; }
+        public Nullable<int> salary { get; set; }
+        public string address { get; set; }
         public string email { get; set; }
     
-        public virtual ICollection<route_s> route_s { get; set; }
-        public virtual ICollection<requisition_type> requisition_type { get; set; }
+        public virtual postType postType1 { get; set; }
     }
 }
