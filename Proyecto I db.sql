@@ -1,5 +1,6 @@
 create database SalePoint
 
+
 use SalePoint
 go
 
@@ -50,16 +51,6 @@ insert into family_product values('Tuberculos');
 insert into family_product values('Legumbres');
 
 
-
-CREATE TABLE requisition_type
-(
-	 requisitionType_id int not null,
-	 name_type varchar (100) null,
-   	 id_person varchar (50) not null,
-	 constraint pk_requisition_type primary key (requisitionType_id),
-     constraint fk_person foreign key (id_person) references EMPLOYEES (identification)
-);
-
 --TABLA PROVEEDORES, INDENTIFICA AL PROVEEDOR 
 CREATE TABLE supplier 
 (
@@ -94,78 +85,114 @@ CREATE TABLE product
 
 
 ----------------------------------------------------------------------------------------------------------
---TABLE PEDIDOS
-CREATE TABLE requisition
-(
-	 requisition_id int identity,
-	 requisition_type int not null,--pedido de cliente/ a proveedor
-	 product_code int not null, 	 
-	 quantity_toBuy int null,
-	 description varchar(1000) null,
-	 order_priority varchar (10) null,
-	 state varchar (10) null,	 
-	 bill_code int,--codigo factura
-	 constraint pk_requisition primary key (requisition_id),
-	 constraint fk_product_requi foreign key (product_code) references products (product_id),
-	 constraint fk_type foreign key (requisition_type) references requisition_type (requisitionType_id),
-	 constraint fk_bill_requi foreign key (bill_code) references bills (bill_id)	
-);
-
 drop table clients
 
-CREATE TABLE clients
+CREATE TABLE client
 (
-	 client_id int identity,
-	 id_person varchar (50) not null,
-	 delivery_address varchar (50) null,--direccion de entrega
-	 constraint pk_clients primary key (client_id),
-	
+	 [id] int  identity,
+	 [identification] varchar (50) not null,
+	 [name] varchar (50) not null,
+	 [last_name] varchar (50) null,
+	 [phone] varchar (50) null,
+	 [email] varchar (50) null,
+	[address] varchar (50) null,--direccion de entrega
+	 constraint pk_client primary key (id)	
 );
 
 
+--TABLE PEDIDO
 
-CREATE TABLE route_s
+CREATE TABLE requisition
 (
-	 route_id int identity,
-	 nombre_bodega varchar(50) null,
-	 origin varchar(100) null,
-	 destination varchar(100) null,
-	 description varchar(1000) null,
-	 address varchar(1000) null,
-	 load_download varchar (50) null,
-	 state varchar (50) null,
-	 employees_id varchar (50) not null,--Transportista
-     order_cod int not null,--pedido
-     client_id int not null,
-	 constraint pk_routes primary key (route_id),
-	 constraint fk_employees foreign key (employees_id) references EMPLOYEES(identification),
-	 constraint fk_order foreign key (order_cod) references requisition(requisition_id),
-	 constraint fk_client foreign key (client_id) references clients (client_id)
+	 [id] int identity,
+	 [client] int not null,--pedido de cliente
+	 [description] varchar(1000) null ,
+	 [state] varchar (50) null ,
+	 [date] varchar (50)null ,	
+	 [amount_total] int null , --monto
+     [total_taxes] int null, --impuestos
+     [total_withTaxes] int null , 
+     [EMPLOYEE] int null,
+	 constraint pk_requisition primary key (id),
+	 constraint fk_client1 foreign key (client) references client(id),
+	 constraint fk_EMPLOYEE1 foreign key (EMPLOYEE) references EMPLOYEE(id)
+);
+
+CREATE TABLE detailRequisition
+(
+	 [id] int identity,
+	 [product] int not null, 	 
+	 [amount] int null, 
+	 [price] int null ,
+	 [requisition] int not null,	 
+	 constraint pk_detailRequisition primary key (id),
+	 constraint fk_requisition foreign key (requisition) references requisition (id),
+	 constraint fk_product foreign key (product) references product(id)
+);
+
+CREATE TABLE [route]
+(
+	 [id] int identity,
+	 [origin] varchar(100) null,
+	 [destination]varchar(100) null,
+	 [description] varchar(1000) null,
+	 [address] varchar(1000) null,
+	 [state] varchar (50) null,
+	 [requisition] int null,
+	 constraint pk_routes primary key (id),
+	 constraint fk_requisition1 foreign key (requisition) references requisition(id)
+);
+
+CREATE TABLE purchaseOrder
+(
+	 [id] int identity,
+	 [supplier] int not null,--pedido de proveedor
+	 [description] varchar(1000) null,
+	 [state] varchar (10) null,
+	 [date] varchar (10)null,	 
+	 constraint pk_purchaseOrder primary key (id),
+	 constraint fk_supplier1 foreign key (supplier) references supplier(id)
+);
+
+CREATE TABLE detailPurchaseOrder
+(
+	 [id] int identity,
+	 [product] int not null, 	 
+	 [amount] int null, 
+	 [price] int null ,
+	 [purchaseOrder] int not null,	 
+	 constraint pk_detailPurchaseOrder primary key (id),
+	 constraint fk_purchaseOrder foreign key (purchaseOrder) references purchaseOrder(id),
+	 constraint fk_product1 foreign key (product) references product(id)
 );
 
 
 
 --TABLE FACTURAS
-CREATE TABLE bills
+CREATE TABLE bill
 (
-	 bill_id int identity,
-	 id_client int  not null,
-	 person_name varchar (50) not null,
-	 present_date date null,
- 	 ddescription varchar(1000) null, --factura a cliente o compra provee
- 	 payment_term varchar (50) null, --plazo para pagar
-     payment_date date null, 
-     product_code int not null,
-     product_name varchar (50) null,
-     amount int null, --cantidad
-     price  int , 
-     amount_total int , --monto
-     total_taxes int , --impuestos
-     total_withTaxes int ,	 
-     sstate varchar (50) null,
-	 constraint pk_bills primary key (bill_id),
-	 constraint fk_client_bill foreign key (id_client) references clients(client_id),
-	 constraint fk_product foreign key (product_code) references products (product_id)	
+	 [id] int identity,
+	 [client] int not null,
+ 	 [payment_term] varchar (50) null, --plazo para pagar
+     [date] date null,  
+     [amount_total] int , --monto
+     [total_taxes] int , --impuestos
+     [total_withTaxes] int ,	 
+     [state] varchar (50) null,
+	 constraint pk_bill primary key (id),
+	 constraint fk_client_bill foreign key (client) references client(id),	
+);
+
+CREATE TABLE detailBill
+(
+	 [id] int identity,
+	 [bill]int null,
+	 [product] int not null, 	 
+	 [amount] int null, 
+	 [price] int null ,
+	 constraint pk_datailBill primary key (id),
+	 constraint fk_product2 foreign key (product) references product(id),
+	  constraint fk_bill foreign key (bill) references bill(id)	
 );
 
 
@@ -173,20 +200,17 @@ CREATE TABLE bills
 --TABLE CUENTAS POR PAGAR
 CREATE TABLE accounts_payable
 (
-	 accountsPayable_code int identity,
-	 purchase_code int not null, --codigo de compra
-	 pay_supplier int not null, --proveedor a pagar
-	 was_paid float null, --se pagó
-     outstanding_balance float null, --saldo pendiente
-	 credit_time varchar (50) null, 
-	 present_date date null,
-	 sstate varchar (50) null, 
-	 pay_date date null,
-	 made_by varchar (50) null, --hecha por
-	 date_cancellation date null,
-	 constraint pk_accounts_payable primary key (accountsPayable_code),
-	 constraint fk_purchase foreign key (purchase_code) references bills (bill_id),
-	 constraint fk_supplier_payable foreign key (pay_supplier) references suppliers (supplier_id)
+	 [id] int identity,
+	 [purchaseOrder] int not null, --codigo de factura
+	 [supplier] int not null, --proveedor a pagar
+	 [date] date null,
+	 [balance] float null,
+     [outstanding_balance] float null, --saldo pendiente	 
+	 [state] varchar (50) null, 
+	 [made_by] varchar (50) null, --hecha por
+	 constraint pk_accounts_payable primary key (id),
+	 constraint fk_purchaseOrder1 foreign key (purchaseOrder) references purchaseOrder (id),
+	 constraint fk_supplier_payable foreign key (supplier) references supplier(id)
 );
 
 
@@ -194,80 +218,20 @@ CREATE TABLE accounts_payable
 --TABLE CUENTAS POR COBRAR
 CREATE TABLE accounts_receivable
 (
-	 accountsReceivable_id int identity,
-	 purchase_code int not null, --codigo de compra
-	 client_debtor int not null, --cliente deudor
-	 client_name varchar (50) not null,
-	 paid float null, --pagó
-     outstanding_balance float null, --saldo pendiente
-	 credit_time varchar (50) null, 
-	 present_date date null,
-	 state varchar (50) null, 
-	 pay_date date null,
-	 made_by varchar (50) null, --hecha por
-	 date_cancellation date null,
-	 constraint pk_accounts_receivable primary key (accountsReceivable_id),
-	 constraint fk_purchase_rece foreign key (purchase_code) references bills (bill_id),
-	 constraint fk_client_rece foreign key (client_debtor) references clients (client_id)
+	 [id] int identity,
+	 [bill] int not null, --codigo de factura
+	 [client] int not null, --cliente deudor
+	 [balance] float null,
+     [outstanding_balance] float null, --saldo pendiente
+	 [credit_time] varchar (50) null, 
+	 [date] date null,
+	 [state] varchar (50) null, 
+	 [made_by] varchar (50) null, --hecha por
+	 constraint pk_accounts_receivable primary key (id),
+	 constraint fk_bill_rece foreign key (bill) references bill(id),
+	 constraint fk_client_rece foreign key (client) references client(id)
 
 );
 
 
 
---TABLE HISTORIAL DE VENTAS
-CREATE TABLE sales_history
-(
-	 salesHistory_id varchar (50) not null,
-	 client_id int not null, 
-	 client_name varchar (50) not null,
-	 bill_code int not null,
-	 present_date date null,
- 	 description varchar(1000) null,  	 
-     payment_date date null, 
-     product_code int not null,
-     product_name varchar (50) null,
-     total_withTaxes int ,	 
-     constraint pk_sales_history primary key (salesHistory_id),
-	 constraint fk_client_history foreign key (client_id) references clients (client_id),
-	 constraint fk_bill_history foreign key (bill_code) references bills (bill_id),
-	 constraint fk_product_history foreign key (product_code) references products (product_id)	
-);
-
-
-
-
-
-
-
-
---INSERTS
-----------------------------------------------------------------------------------------------------------------
-
-
--------------------------------------------------------
--------------------------------------------------------
--------------------------------------------------------
--------------------------------------------------------
-
-
-
---SELECTS
-select * from people;
-select * from administrator;
-select * from seller;
-select * from users;
-select * from login;
-select * from employees;
-select * from post;
-select * from drivers;
-select * from requisition_type;
-select * from family_product;
-select * from suppliers;
-select * from products;
-select * from requisition;
-select * from clients;
-select * from routes;
-select * from bills;
-select * from accounts_payable;
-select * from accounts_receivable;
-select * from sales_history;
