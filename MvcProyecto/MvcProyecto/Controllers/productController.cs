@@ -41,7 +41,7 @@ namespace MvcProyecto.Controllers
         public ActionResult Create()
         {
             ViewBag.familyProduct = new SelectList(db.family_product, "id", "description");
-            ViewBag.supplier = new SelectList(db.supplier, "id", "legalIdentification_card");
+            ViewBag.supplier = new SelectList(db.supplier, "id", "company");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace MvcProyecto.Controllers
             }
 
             ViewBag.familyProduct = new SelectList(db.family_product, "id", "description", product.familyProduct);
-            ViewBag.supplier = new SelectList(db.supplier, "id", "legalIdentification_card", product.supplier);
+            ViewBag.supplier = new SelectList(db.supplier, "id", "company", product.supplier);
             return View(product);
         }
 
@@ -74,7 +74,7 @@ namespace MvcProyecto.Controllers
                 return HttpNotFound();
             }
             ViewBag.familyProduct = new SelectList(db.family_product, "id", "description", product.familyProduct);
-            ViewBag.supplier = new SelectList(db.supplier, "id", "legalIdentification_card", product.supplier);
+            ViewBag.supplier = new SelectList(db.supplier, "id", "company", product.supplier);
             return View(product);
         }
 
@@ -91,7 +91,7 @@ namespace MvcProyecto.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.familyProduct = new SelectList(db.family_product, "id", "description", product.familyProduct);
-            ViewBag.supplier = new SelectList(db.supplier, "id", "legalIdentification_card", product.supplier);
+            ViewBag.supplier = new SelectList(db.supplier, "id", "company", product.supplier);
             return View(product);
         }
 

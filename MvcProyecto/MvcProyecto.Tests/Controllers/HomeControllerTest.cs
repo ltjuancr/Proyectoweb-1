@@ -45,7 +45,7 @@ namespace MvcProyecto.Tests.Controllers
             HomeController controller = new HomeController();
 
             // Actuar
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = controller.login() as ViewResult;
 
             // Declarar
             Assert.IsNotNull(result);

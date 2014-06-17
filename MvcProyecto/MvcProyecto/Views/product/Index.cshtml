@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.minimum)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.supplier1.legalIdentification_card)
+            @Html.DisplayNameFor(model => model.supplier1.company)
         </th>
         <th></th>
     </tr>
@@ -62,7 +62,7 @@
             @Html.DisplayFor(modelItem => item.minimum)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.supplier1.legalIdentification_card)
+            @Html.DisplayFor(modelItem => item.supplier1.company)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

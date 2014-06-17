@@ -19,9 +19,7 @@
         <EntityTypeShape EntityType="SalePointModel.purchaseOrder" Width="1.5" PointX="2.25" PointY="11.625" />
         <EntityTypeShape EntityType="SalePointModel.requisition" Width="1.5" PointX="9.125" PointY="1.625" />
         <EntityTypeShape EntityType="SalePointModel.route" Width="1.5" PointX="11.375" PointY="8.125" />
-        <EntityTypeShape EntityType="SalePointModel.supplier" Width="1.5" PointX="0.5" PointY="4.875" />
         <AssociationConnector Association="SalePointModel.fk_purchaseOrder1" />
-        <AssociationConnector Association="SalePointModel.fk_supplier_payable" />
         <AssociationConnector Association="SalePointModel.fk_bill_rece" />
         <AssociationConnector Association="SalePointModel.fk_client_rece" />
         <AssociationConnector Association="SalePointModel.fk_bill" />
@@ -35,9 +33,11 @@
         <AssociationConnector Association="SalePointModel.fk_EMPLOYEE1" />
         <AssociationConnector Association="SalePointModel.fk_post" />
         <AssociationConnector Association="SalePointModel.fk_familyProduct" />
+        <AssociationConnector Association="SalePointModel.fk_requisition1" />
+        <EntityTypeShape EntityType="SalePointModel.supplier" Width="1.5" PointX="0.5" PointY="5.125" />
+        <AssociationConnector Association="SalePointModel.fk_supplier_payable" />
         <AssociationConnector Association="SalePointModel.fk_supplier" />
         <AssociationConnector Association="SalePointModel.fk_supplier1" />
-        <AssociationConnector Association="SalePointModel.fk_requisition1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

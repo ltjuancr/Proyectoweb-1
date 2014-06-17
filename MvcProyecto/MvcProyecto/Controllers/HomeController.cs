@@ -22,9 +22,9 @@ namespace MvcProyecto.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult login()
         {
-            ViewBag.Message = "Página de contacto.";
+
 
             return View();
         }

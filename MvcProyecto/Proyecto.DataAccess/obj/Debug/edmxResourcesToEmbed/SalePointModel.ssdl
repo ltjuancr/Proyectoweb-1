@@ -257,8 +257,8 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="company" Type="varchar" MaxLength="50" />
+    <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="account" Type="varchar" MaxLength="50" />
     <Property Name="phone" Type="varchar" MaxLength="50" />
     <Property Name="address" Type="varchar" MaxLength="50" />

@@ -15,13 +15,8 @@
     <EntitySet Name="purchaseOrder" EntityType="SalePointModel.purchaseOrder" />
     <EntitySet Name="requisition" EntityType="SalePointModel.requisition" />
     <EntitySet Name="route" EntityType="SalePointModel.route" />
-    <EntitySet Name="supplier" EntityType="SalePointModel.supplier" />
     <AssociationSet Name="fk_purchaseOrder1" Association="SalePointModel.fk_purchaseOrder1">
       <End Role="purchaseOrder" EntitySet="purchaseOrder" />
-      <End Role="accounts_payable" EntitySet="accounts_payable" />
-    </AssociationSet>
-    <AssociationSet Name="fk_supplier_payable" Association="SalePointModel.fk_supplier_payable">
-      <End Role="supplier" EntitySet="supplier" />
       <End Role="accounts_payable" EntitySet="accounts_payable" />
     </AssociationSet>
     <AssociationSet Name="fk_bill_rece" Association="SalePointModel.fk_bill_rece">
@@ -76,6 +71,15 @@
       <End Role="family_product" EntitySet="family_product" />
       <End Role="product" EntitySet="product" />
     </AssociationSet>
+    <AssociationSet Name="fk_requisition1" Association="SalePointModel.fk_requisition1">
+      <End Role="requisition" EntitySet="requisition" />
+      <End Role="route" EntitySet="route" />
+    </AssociationSet>
+    <EntitySet Name="supplier" EntityType="SalePointModel.supplier" />
+    <AssociationSet Name="fk_supplier_payable" Association="SalePointModel.fk_supplier_payable">
+      <End Role="supplier" EntitySet="supplier" />
+      <End Role="accounts_payable" EntitySet="accounts_payable" />
+    </AssociationSet>
     <AssociationSet Name="fk_supplier" Association="SalePointModel.fk_supplier">
       <End Role="supplier" EntitySet="supplier" />
       <End Role="product" EntitySet="product" />
@@ -83,10 +87,6 @@
     <AssociationSet Name="fk_supplier1" Association="SalePointModel.fk_supplier1">
       <End Role="supplier" EntitySet="supplier" />
       <End Role="purchaseOrder" EntitySet="purchaseOrder" />
-    </AssociationSet>
-    <AssociationSet Name="fk_requisition1" Association="SalePointModel.fk_requisition1">
-      <End Role="requisition" EntitySet="requisition" />
-      <End Role="route" EntitySet="route" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="accounts_payable">
@@ -285,21 +285,6 @@
     <Property Type="Int32" Name="requisition" />
     <NavigationProperty Name="requisition1" Relationship="SalePointModel.fk_requisition1" FromRole="route" ToRole="requisition" />
   </EntityType>
-  <EntityType Name="supplier">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_supplier_payable" FromRole="supplier" ToRole="accounts_payable" />
-    <NavigationProperty Name="product" Relationship="SalePointModel.fk_supplier" FromRole="supplier" ToRole="product" />
-    <NavigationProperty Name="purchaseOrder" Relationship="SalePointModel.fk_supplier1" FromRole="supplier" ToRole="purchaseOrder" />
-  </EntityType>
   <Association Name="fk_purchaseOrder1">
     <End Type="SalePointModel.purchaseOrder" Role="purchaseOrder" Multiplicity="1" />
     <End Type="SalePointModel.accounts_payable" Role="accounts_payable" Multiplicity="*" />
@@ -309,18 +294,6 @@
       </Principal>
       <Dependent Role="accounts_payable">
         <PropertyRef Name="purchaseOrder" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_supplier_payable">
-    <End Type="SalePointModel.supplier" Role="supplier" Multiplicity="1" />
-    <End Type="SalePointModel.accounts_payable" Role="accounts_payable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="supplier">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="accounts_payable">
-        <PropertyRef Name="supplier" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -480,6 +453,45 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_requisition1">
+    <End Type="SalePointModel.requisition" Role="requisition" Multiplicity="0..1" />
+    <End Type="SalePointModel.route" Role="route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="requisition">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="route">
+        <PropertyRef Name="requisition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_supplier_payable" FromRole="supplier" ToRole="accounts_payable" />
+    <NavigationProperty Name="product" Relationship="SalePointModel.fk_supplier" FromRole="supplier" ToRole="product" />
+    <NavigationProperty Name="purchaseOrder" Relationship="SalePointModel.fk_supplier1" FromRole="supplier" ToRole="purchaseOrder" />
+  </EntityType>
+  <Association Name="fk_supplier_payable">
+    <End Type="SalePointModel.supplier" Role="supplier" Multiplicity="1" />
+    <End Type="SalePointModel.accounts_payable" Role="accounts_payable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supplier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="accounts_payable">
+        <PropertyRef Name="supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_supplier">
     <End Type="SalePointModel.supplier" Role="supplier" Multiplicity="1" />
     <End Type="SalePointModel.product" Role="product" Multiplicity="*" />
@@ -501,18 +513,6 @@
       </Principal>
       <Dependent Role="purchaseOrder">
         <PropertyRef Name="supplier" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_requisition1">
-    <End Type="SalePointModel.requisition" Role="requisition" Multiplicity="0..1" />
-    <End Type="SalePointModel.route" Role="route" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="requisition">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="route">
-        <PropertyRef Name="requisition" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

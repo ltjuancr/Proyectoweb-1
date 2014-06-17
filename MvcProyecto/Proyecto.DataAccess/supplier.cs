@@ -22,8 +22,8 @@ namespace Proyecto.DataAccess
         }
     
         public int id { get; set; }
-        public string legalIdentification_card { get; set; }
         public string company { get; set; }
+        public string legalIdentification_card { get; set; }
         public string account { get; set; }
         public string phone { get; set; }
         public string address { get; set; }
