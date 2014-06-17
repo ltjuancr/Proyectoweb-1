@@ -25,10 +25,20 @@ namespace Proyecto.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<postType> postType { get; set; }
+        public DbSet<accounts_payable> accounts_payable { get; set; }
+        public DbSet<accounts_receivable> accounts_receivable { get; set; }
+        public DbSet<bill> bill { get; set; }
+        public DbSet<client> client { get; set; }
+        public DbSet<detailBill> detailBill { get; set; }
+        public DbSet<detailPurchaseOrder> detailPurchaseOrder { get; set; }
+        public DbSet<detailRequisition> detailRequisition { get; set; }
         public DbSet<EMPLOYEE> EMPLOYEE { get; set; }
         public DbSet<family_product> family_product { get; set; }
-        public DbSet<supplier> supplier { get; set; }
+        public DbSet<postType> postType { get; set; }
         public DbSet<product> product { get; set; }
+        public DbSet<purchaseOrder> purchaseOrder { get; set; }
+        public DbSet<requisition> requisition { get; set; }
+        public DbSet<route> route { get; set; }
+        public DbSet<supplier> supplier { get; set; }
     }
 }

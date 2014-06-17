@@ -12,25 +12,22 @@ namespace Proyecto.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class supplier
+    public partial class purchaseOrder
     {
-        public supplier()
+        public purchaseOrder()
         {
             this.accounts_payable = new HashSet<accounts_payable>();
-            this.product = new HashSet<product>();
-            this.purchaseOrder = new HashSet<purchaseOrder>();
+            this.detailPurchaseOrder = new HashSet<detailPurchaseOrder>();
         }
     
         public int id { get; set; }
-        public string legalIdentification_card { get; set; }
-        public string company { get; set; }
-        public string account { get; set; }
-        public string phone { get; set; }
-        public string address { get; set; }
-        public string email { get; set; }
+        public int supplier { get; set; }
+        public string description { get; set; }
+        public string state { get; set; }
+        public string date { get; set; }
     
         public virtual ICollection<accounts_payable> accounts_payable { get; set; }
-        public virtual ICollection<product> product { get; set; }
-        public virtual ICollection<purchaseOrder> purchaseOrder { get; set; }
+        public virtual ICollection<detailPurchaseOrder> detailPurchaseOrder { get; set; }
+        public virtual supplier supplier1 { get; set; }
     }
 }

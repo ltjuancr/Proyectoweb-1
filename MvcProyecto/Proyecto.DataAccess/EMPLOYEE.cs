@@ -14,6 +14,11 @@ namespace Proyecto.DataAccess
     
     public partial class EMPLOYEE
     {
+        public EMPLOYEE()
+        {
+            this.requisition = new HashSet<requisition>();
+        }
+    
         public int id { get; set; }
         public string identification { get; set; }
         public string name { get; set; }
@@ -27,6 +32,7 @@ namespace Proyecto.DataAccess
         public string address { get; set; }
         public string email { get; set; }
     
+        public virtual ICollection<requisition> requisition { get; set; }
         public virtual postType postType1 { get; set; }
     }
 }

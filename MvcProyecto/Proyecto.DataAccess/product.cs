@@ -14,6 +14,13 @@ namespace Proyecto.DataAccess
     
     public partial class product
     {
+        public product()
+        {
+            this.detailBill = new HashSet<detailBill>();
+            this.detailPurchaseOrder = new HashSet<detailPurchaseOrder>();
+            this.detailRequisition = new HashSet<detailRequisition>();
+        }
+    
         public int id { get; set; }
         public int code { get; set; }
         public int familyProduct { get; set; }
@@ -24,6 +31,9 @@ namespace Proyecto.DataAccess
         public int minimum { get; set; }
         public int supplier { get; set; }
     
+        public virtual ICollection<detailBill> detailBill { get; set; }
+        public virtual ICollection<detailPurchaseOrder> detailPurchaseOrder { get; set; }
+        public virtual ICollection<detailRequisition> detailRequisition { get; set; }
         public virtual family_product family_product { get; set; }
         public virtual supplier supplier1 { get; set; }
     }

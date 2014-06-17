@@ -49,6 +49,27 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accounts_payable.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receivable.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bill.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="client.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detailBill.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detailPurchaseOrder.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detailRequisition.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EMPLOYEE.cs">
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
@@ -62,6 +83,15 @@
       <DependentUpon>SalePointModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchaseOrder.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="requisition.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="route.cs">
+      <DependentUpon>SalePointModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SalePointModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

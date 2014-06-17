@@ -1,10 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SalePointModelStoreContainer" CdmEntityContainer="SalePointEntities">
-    <EntitySetMapping Name="postType">
-      <EntityTypeMapping TypeName="SalePointModel.postType">
-        <MappingFragment StoreEntitySet="postType">
-          <ScalarProperty Name="description" ColumnName="description" />
+    <EntitySetMapping Name="accounts_payable">
+      <EntityTypeMapping TypeName="SalePointModel.accounts_payable">
+        <MappingFragment StoreEntitySet="accounts_payable">
+          <ScalarProperty Name="made_by" ColumnName="made_by" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="purchaseOrder" ColumnName="purchaseOrder" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accounts_receivable">
+      <EntityTypeMapping TypeName="SalePointModel.accounts_receivable">
+        <MappingFragment StoreEntitySet="accounts_receivable">
+          <ScalarProperty Name="made_by" ColumnName="made_by" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="credit_time" ColumnName="credit_time" />
+          <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="bill" ColumnName="bill" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bill">
+      <EntityTypeMapping TypeName="SalePointModel.bill">
+        <MappingFragment StoreEntitySet="bill">
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+          <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+          <ScalarProperty Name="amount_total" ColumnName="amount_total" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="payment_term" ColumnName="payment_term" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="client">
+      <EntityTypeMapping TypeName="SalePointModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="identification" ColumnName="identification" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detailBill">
+      <EntityTypeMapping TypeName="SalePointModel.detailBill">
+        <MappingFragment StoreEntitySet="detailBill">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="bill" ColumnName="bill" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detailPurchaseOrder">
+      <EntityTypeMapping TypeName="SalePointModel.detailPurchaseOrder">
+        <MappingFragment StoreEntitySet="detailPurchaseOrder">
+          <ScalarProperty Name="purchaseOrder" ColumnName="purchaseOrder" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detailRequisition">
+      <EntityTypeMapping TypeName="SalePointModel.detailRequisition">
+        <MappingFragment StoreEntitySet="detailRequisition">
+          <ScalarProperty Name="requisition" ColumnName="requisition" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="product" ColumnName="product" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -35,15 +116,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="supplier">
-      <EntityTypeMapping TypeName="SalePointModel.supplier">
-        <MappingFragment StoreEntitySet="supplier">
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="account" ColumnName="account" />
-          <ScalarProperty Name="company" ColumnName="company" />
-          <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
+    <EntitySetMapping Name="postType">
+      <EntityTypeMapping TypeName="SalePointModel.postType">
+        <MappingFragment StoreEntitySet="postType">
+          <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -59,6 +135,58 @@
           <ScalarProperty Name="product_name" ColumnName="product_name" />
           <ScalarProperty Name="familyProduct" ColumnName="familyProduct" />
           <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchaseOrder">
+      <EntityTypeMapping TypeName="SalePointModel.purchaseOrder">
+        <MappingFragment StoreEntitySet="purchaseOrder">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="requisition">
+      <EntityTypeMapping TypeName="SalePointModel.requisition">
+        <MappingFragment StoreEntitySet="requisition">
+          <ScalarProperty Name="EMPLOYEE" ColumnName="EMPLOYEE" />
+          <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+          <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+          <ScalarProperty Name="amount_total" ColumnName="amount_total" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="route">
+      <EntityTypeMapping TypeName="SalePointModel.route">
+        <MappingFragment StoreEntitySet="route">
+          <ScalarProperty Name="requisition" ColumnName="requisition" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="origin" ColumnName="origin" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier">
+      <EntityTypeMapping TypeName="SalePointModel.supplier">
+        <MappingFragment StoreEntitySet="supplier">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
