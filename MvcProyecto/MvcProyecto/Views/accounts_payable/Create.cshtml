@@ -1,0 +1,83 @@
+﻿@model Proyecto.DataAccess.accounts_payable
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>accounts_payable</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.purchaseOrder, "purchaseOrder1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("purchaseOrder", String.Empty)
+            @Html.ValidationMessageFor(model => model.purchaseOrder)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.supplier, "supplier1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("supplier", String.Empty)
+            @Html.ValidationMessageFor(model => model.supplier)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.date)
+            @Html.ValidationMessageFor(model => model.date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.amount_total)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.amount_total)
+            @Html.ValidationMessageFor(model => model.amount_total)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_taxes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_taxes)
+            @Html.ValidationMessageFor(model => model.total_taxes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_withTaxes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_withTaxes)
+            @Html.ValidationMessageFor(model => model.total_withTaxes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.state)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.state)
+            @Html.ValidationMessageFor(model => model.state)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

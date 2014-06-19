@@ -1,0 +1,43 @@
+﻿@model Proyecto.DataAccess.detailBill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>detailBill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bill1.payment_term)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bill1.payment_term)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.product1.product_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.product1.product_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.amount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.amount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.price)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

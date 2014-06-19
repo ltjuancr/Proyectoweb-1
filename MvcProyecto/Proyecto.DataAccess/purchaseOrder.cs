@@ -23,8 +23,11 @@ namespace Proyecto.DataAccess
         public int id { get; set; }
         public int supplier { get; set; }
         public string description { get; set; }
-        public string state { get; set; }
         public string date { get; set; }
+        public Nullable<int> amount_total { get; set; }
+        public Nullable<int> total_taxes { get; set; }
+        public Nullable<int> total_withTaxes { get; set; }
+        public string state { get; set; }
     
         public virtual ICollection<accounts_payable> accounts_payable { get; set; }
         public virtual ICollection<detailPurchaseOrder> detailPurchaseOrder { get; set; }

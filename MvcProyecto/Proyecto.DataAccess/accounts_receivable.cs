@@ -20,7 +20,7 @@ namespace Proyecto.DataAccess
         public Nullable<double> balance { get; set; }
         public Nullable<double> outstanding_balance { get; set; }
         public string credit_time { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public string date { get; set; }
         public string state { get; set; }
         public string made_by { get; set; }
     

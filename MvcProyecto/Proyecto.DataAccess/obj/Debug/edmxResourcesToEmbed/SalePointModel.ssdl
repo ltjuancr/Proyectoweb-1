@@ -96,11 +96,11 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="purchaseOrder" Type="int" Nullable="false" />
     <Property Name="supplier" Type="int" Nullable="false" />
-    <Property Name="date" Type="date" />
-    <Property Name="balance" Type="float" />
-    <Property Name="outstanding_balance" Type="float" />
+    <Property Name="date" Type="varchar" MaxLength="1" />
+    <Property Name="amount_total" Type="int" />
+    <Property Name="total_taxes" Type="int" />
+    <Property Name="total_withTaxes" Type="int" />
     <Property Name="state" Type="varchar" MaxLength="50" />
-    <Property Name="made_by" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="accounts_receivable">
     <Key>
@@ -112,7 +112,7 @@
     <Property Name="balance" Type="float" />
     <Property Name="outstanding_balance" Type="float" />
     <Property Name="credit_time" Type="varchar" MaxLength="50" />
-    <Property Name="date" Type="date" />
+    <Property Name="date" Type="varchar" MaxLength="1" />
     <Property Name="state" Type="varchar" MaxLength="50" />
     <Property Name="made_by" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -123,7 +123,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="client" Type="int" Nullable="false" />
     <Property Name="payment_term" Type="varchar" MaxLength="50" />
-    <Property Name="date" Type="date" />
+    <Property Name="date" Type="varchar" MaxLength="1" />
     <Property Name="amount_total" Type="int" />
     <Property Name="total_taxes" Type="int" />
     <Property Name="total_withTaxes" Type="int" />
@@ -223,8 +223,11 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="supplier" Type="int" Nullable="false" />
     <Property Name="description" Type="varchar" MaxLength="1000" />
-    <Property Name="state" Type="varchar" MaxLength="10" />
     <Property Name="date" Type="varchar" MaxLength="10" />
+    <Property Name="amount_total" Type="int" />
+    <Property Name="total_taxes" Type="int" />
+    <Property Name="total_withTaxes" Type="int" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="requisition">
     <Key>
@@ -257,8 +260,8 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="company" Type="varchar" MaxLength="50" />
+    <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="account" Type="varchar" MaxLength="50" />
     <Property Name="phone" Type="varchar" MaxLength="50" />
     <Property Name="address" Type="varchar" MaxLength="50" />

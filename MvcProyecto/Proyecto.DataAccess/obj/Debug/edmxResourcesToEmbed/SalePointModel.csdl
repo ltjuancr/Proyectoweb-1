@@ -96,11 +96,11 @@
     <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="purchaseOrder" Nullable="false" />
     <Property Type="Int32" Name="supplier" Nullable="false" />
-    <Property Type="DateTime" Name="date" Precision="0" />
-    <Property Type="Double" Name="balance" />
-    <Property Type="Double" Name="outstanding_balance" />
+    <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="amount_total" />
+    <Property Type="Int32" Name="total_taxes" />
+    <Property Type="Int32" Name="total_withTaxes" />
     <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="made_by" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="purchaseOrder1" Relationship="SalePointModel.fk_purchaseOrder1" FromRole="accounts_payable" ToRole="purchaseOrder" />
     <NavigationProperty Name="supplier1" Relationship="SalePointModel.fk_supplier_payable" FromRole="accounts_payable" ToRole="supplier" />
   </EntityType>
@@ -114,7 +114,7 @@
     <Property Type="Double" Name="balance" />
     <Property Type="Double" Name="outstanding_balance" />
     <Property Type="String" Name="credit_time" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="date" Precision="0" />
+    <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="made_by" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="bill1" Relationship="SalePointModel.fk_bill_rece" FromRole="accounts_receivable" ToRole="bill" />
@@ -127,7 +127,7 @@
     <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="client" Nullable="false" />
     <Property Type="String" Name="payment_term" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="date" Precision="0" />
+    <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Type="Int32" Name="amount_total" />
     <Property Type="Int32" Name="total_taxes" />
     <Property Type="Int32" Name="total_withTaxes" />
@@ -248,8 +248,11 @@
     <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="supplier" Nullable="false" />
     <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="state" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="date" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="amount_total" />
+    <Property Type="Int32" Name="total_taxes" />
+    <Property Type="Int32" Name="total_withTaxes" />
+    <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_purchaseOrder1" FromRole="purchaseOrder" ToRole="accounts_payable" />
     <NavigationProperty Name="detailPurchaseOrder" Relationship="SalePointModel.fk_purchaseOrder" FromRole="purchaseOrder" ToRole="detailPurchaseOrder" />
     <NavigationProperty Name="supplier1" Relationship="SalePointModel.fk_supplier1" FromRole="purchaseOrder" ToRole="supplier" />
@@ -290,8 +293,8 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />

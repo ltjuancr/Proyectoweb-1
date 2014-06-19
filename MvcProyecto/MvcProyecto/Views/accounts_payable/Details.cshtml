@@ -1,0 +1,64 @@
+﻿@model Proyecto.DataAccess.accounts_payable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>accounts_payable</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.purchaseOrder1.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.purchaseOrder1.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.supplier1.company)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.supplier1.company)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.amount_total)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.amount_total)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.total_taxes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.total_taxes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.total_withTaxes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.total_withTaxes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -101,11 +101,11 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="purchaseOrder" Type="int" Nullable="false" />
           <Property Name="supplier" Type="int" Nullable="false" />
-          <Property Name="date" Type="date" />
-          <Property Name="balance" Type="float" />
-          <Property Name="outstanding_balance" Type="float" />
+          <Property Name="date" Type="varchar" MaxLength="1" />
+          <Property Name="amount_total" Type="int" />
+          <Property Name="total_taxes" Type="int" />
+          <Property Name="total_withTaxes" Type="int" />
           <Property Name="state" Type="varchar" MaxLength="50" />
-          <Property Name="made_by" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="accounts_receivable">
           <Key>
@@ -117,7 +117,7 @@
           <Property Name="balance" Type="float" />
           <Property Name="outstanding_balance" Type="float" />
           <Property Name="credit_time" Type="varchar" MaxLength="50" />
-          <Property Name="date" Type="date" />
+          <Property Name="date" Type="varchar" MaxLength="1" />
           <Property Name="state" Type="varchar" MaxLength="50" />
           <Property Name="made_by" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -128,7 +128,7 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="client" Type="int" Nullable="false" />
           <Property Name="payment_term" Type="varchar" MaxLength="50" />
-          <Property Name="date" Type="date" />
+          <Property Name="date" Type="varchar" MaxLength="1" />
           <Property Name="amount_total" Type="int" />
           <Property Name="total_taxes" Type="int" />
           <Property Name="total_withTaxes" Type="int" />
@@ -228,8 +228,11 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="supplier" Type="int" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="1000" />
-          <Property Name="state" Type="varchar" MaxLength="10" />
           <Property Name="date" Type="varchar" MaxLength="10" />
+          <Property Name="amount_total" Type="int" />
+          <Property Name="total_taxes" Type="int" />
+          <Property Name="total_withTaxes" Type="int" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="requisition">
           <Key>
@@ -262,8 +265,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="company" Type="varchar" MaxLength="50" />
+          <Property Name="legalIdentification_card" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="account" Type="varchar" MaxLength="50" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
           <Property Name="address" Type="varchar" MaxLength="50" />
@@ -585,11 +588,11 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="purchaseOrder" Nullable="false" />
           <Property Type="Int32" Name="supplier" Nullable="false" />
-          <Property Type="DateTime" Name="date" Precision="0" />
-          <Property Type="Double" Name="balance" />
-          <Property Type="Double" Name="outstanding_balance" />
+          <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="amount_total" />
+          <Property Type="Int32" Name="total_taxes" />
+          <Property Type="Int32" Name="total_withTaxes" />
           <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="made_by" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="purchaseOrder1" Relationship="SalePointModel.fk_purchaseOrder1" FromRole="accounts_payable" ToRole="purchaseOrder" />
           <NavigationProperty Name="supplier1" Relationship="SalePointModel.fk_supplier_payable" FromRole="accounts_payable" ToRole="supplier" />
         </EntityType>
@@ -603,7 +606,7 @@
           <Property Type="Double" Name="balance" />
           <Property Type="Double" Name="outstanding_balance" />
           <Property Type="String" Name="credit_time" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="date" Precision="0" />
+          <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="made_by" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="bill1" Relationship="SalePointModel.fk_bill_rece" FromRole="accounts_receivable" ToRole="bill" />
@@ -616,7 +619,7 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="client" Nullable="false" />
           <Property Type="String" Name="payment_term" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="date" Precision="0" />
+          <Property Type="String" Name="date" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="amount_total" />
           <Property Type="Int32" Name="total_taxes" />
           <Property Type="Int32" Name="total_withTaxes" />
@@ -737,8 +740,11 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="supplier" Nullable="false" />
           <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="state" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="date" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="amount_total" />
+          <Property Type="Int32" Name="total_taxes" />
+          <Property Type="Int32" Name="total_withTaxes" />
+          <Property Type="String" Name="state" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="accounts_payable" Relationship="SalePointModel.fk_purchaseOrder1" FromRole="purchaseOrder" ToRole="accounts_payable" />
           <NavigationProperty Name="detailPurchaseOrder" Relationship="SalePointModel.fk_purchaseOrder" FromRole="purchaseOrder" ToRole="detailPurchaseOrder" />
           <NavigationProperty Name="supplier1" Relationship="SalePointModel.fk_supplier1" FromRole="purchaseOrder" ToRole="supplier" />
@@ -779,8 +785,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="company" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="legalIdentification_card" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1014,10 +1020,10 @@
           <EntitySetMapping Name="accounts_payable">
             <EntityTypeMapping TypeName="SalePointModel.accounts_payable">
               <MappingFragment StoreEntitySet="accounts_payable">
-                <ScalarProperty Name="made_by" ColumnName="made_by" />
                 <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
-                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+                <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+                <ScalarProperty Name="amount_total" ColumnName="amount_total" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="supplier" ColumnName="supplier" />
                 <ScalarProperty Name="purchaseOrder" ColumnName="purchaseOrder" />
@@ -1152,8 +1158,11 @@
           <EntitySetMapping Name="purchaseOrder">
             <EntityTypeMapping TypeName="SalePointModel.purchaseOrder">
               <MappingFragment StoreEntitySet="purchaseOrder">
-                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+                <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+                <ScalarProperty Name="amount_total" ColumnName="amount_total" />
+                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="supplier" ColumnName="supplier" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -1195,8 +1204,8 @@
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="account" ColumnName="account" />
-                <ScalarProperty Name="company" ColumnName="company" />
                 <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
+                <ScalarProperty Name="company" ColumnName="company" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

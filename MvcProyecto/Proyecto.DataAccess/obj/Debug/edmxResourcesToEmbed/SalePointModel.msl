@@ -4,10 +4,10 @@
     <EntitySetMapping Name="accounts_payable">
       <EntityTypeMapping TypeName="SalePointModel.accounts_payable">
         <MappingFragment StoreEntitySet="accounts_payable">
-          <ScalarProperty Name="made_by" ColumnName="made_by" />
           <ScalarProperty Name="state" ColumnName="state" />
-          <ScalarProperty Name="outstanding_balance" ColumnName="outstanding_balance" />
-          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+          <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+          <ScalarProperty Name="amount_total" ColumnName="amount_total" />
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="supplier" ColumnName="supplier" />
           <ScalarProperty Name="purchaseOrder" ColumnName="purchaseOrder" />
@@ -142,8 +142,11 @@
     <EntitySetMapping Name="purchaseOrder">
       <EntityTypeMapping TypeName="SalePointModel.purchaseOrder">
         <MappingFragment StoreEntitySet="purchaseOrder">
-          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="total_withTaxes" ColumnName="total_withTaxes" />
+          <ScalarProperty Name="total_taxes" ColumnName="total_taxes" />
+          <ScalarProperty Name="amount_total" ColumnName="amount_total" />
+          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="supplier" ColumnName="supplier" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -185,8 +188,8 @@
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="account" ColumnName="account" />
-          <ScalarProperty Name="company" ColumnName="company" />
           <ScalarProperty Name="legalIdentification_card" ColumnName="legalIdentification_card" />
+          <ScalarProperty Name="company" ColumnName="company" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

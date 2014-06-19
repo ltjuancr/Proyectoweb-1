@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Proyecto.DataAccess.accounts_payable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.purchaseOrder1.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier1.company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_taxes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_withTaxes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchaseOrder1.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supplier1.company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_taxes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_withTaxes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

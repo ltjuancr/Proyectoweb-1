@@ -2,7 +2,9 @@ create database SalePoint
 
 
 use SalePoint
-go
+
+
+drop database SalePoint
 
 create table postType(
  [id] int identity,
@@ -149,7 +151,11 @@ CREATE TABLE purchaseOrder
 	 [supplier] int not null,--pedido de proveedor
 	 [description] varchar(1000) null,
 	 [state] varchar (10) null,
-	 [date] varchar (10)null,	 
+	 [date] varchar (10)null,
+	 [amount_total] int , --monto
+     [total_taxes] int , --impuestos
+     [total_withTaxes] int ,	 
+     [state] varchar (50) null,	 
 	 constraint pk_purchaseOrder primary key (id),
 	 constraint fk_supplier1 foreign key (supplier) references supplier(id)
 );
@@ -174,7 +180,7 @@ CREATE TABLE bill
 	 [id] int identity,
 	 [client] int not null,
  	 [payment_term] varchar (50) null, --plazo para pagar
-     [date] date null,  
+     [date] varchar null,  
      [amount_total] int , --monto
      [total_taxes] int , --impuestos
      [total_withTaxes] int ,	 
@@ -203,7 +209,7 @@ CREATE TABLE accounts_payable
 	 [id] int identity,
 	 [purchaseOrder] int not null, --codigo de factura
 	 [supplier] int not null, --proveedor a pagar
-	 [date] date null,
+	 [date] varchar null,
 	 [balance] float null,
      [outstanding_balance] float null, --saldo pendiente	 
 	 [state] varchar (50) null, 
@@ -224,7 +230,7 @@ CREATE TABLE accounts_receivable
 	 [balance] float null,
      [outstanding_balance] float null, --saldo pendiente
 	 [credit_time] varchar (50) null, 
-	 [date] date null,
+	 [date] varchar null,
 	 [state] varchar (50) null, 
 	 [made_by] varchar (50) null, --hecha por
 	 constraint pk_accounts_receivable primary key (id),

@@ -17,11 +17,11 @@ namespace Proyecto.DataAccess
         public int id { get; set; }
         public int purchaseOrder { get; set; }
         public int supplier { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
-        public Nullable<double> balance { get; set; }
-        public Nullable<double> outstanding_balance { get; set; }
+        public string date { get; set; }
+        public Nullable<int> amount_total { get; set; }
+        public Nullable<int> total_taxes { get; set; }
+        public Nullable<int> total_withTaxes { get; set; }
         public string state { get; set; }
-        public string made_by { get; set; }
     
         public virtual purchaseOrder purchaseOrder1 { get; set; }
         public virtual supplier supplier1 { get; set; }

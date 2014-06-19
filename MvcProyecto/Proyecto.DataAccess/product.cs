@@ -20,6 +20,7 @@ namespace Proyecto.DataAccess
             this.detailPurchaseOrder = new HashSet<detailPurchaseOrder>();
             this.detailRequisition = new HashSet<detailRequisition>();
         }
+
     
         public int id { get; set; }
         public int code { get; set; }

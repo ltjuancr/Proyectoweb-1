@@ -23,7 +23,7 @@ namespace Proyecto.DataAccess
         public int id { get; set; }
         public int client { get; set; }
         public string payment_term { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public string date { get; set; }
         public Nullable<int> amount_total { get; set; }
         public Nullable<int> total_taxes { get; set; }
         public Nullable<int> total_withTaxes { get; set; }

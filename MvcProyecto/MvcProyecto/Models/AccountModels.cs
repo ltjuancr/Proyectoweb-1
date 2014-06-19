@@ -55,7 +55,7 @@ namespace MvcProyecto.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class LoginModel
+    public class Login
     {
         [Required]
         [Display(Name = "Nombre de usuario")]

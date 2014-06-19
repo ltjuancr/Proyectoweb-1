@@ -1,0 +1,59 @@
+﻿@model Proyecto.DataAccess.detailPurchaseOrder
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>detailPurchaseOrder</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.product, "product1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("product", String.Empty)
+            @Html.ValidationMessageFor(model => model.product)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.amount)
+            @Html.ValidationMessageFor(model => model.amount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.price)
+            @Html.ValidationMessageFor(model => model.price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.purchaseOrder, "purchaseOrder1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("purchaseOrder", String.Empty)
+            @Html.ValidationMessageFor(model => model.purchaseOrder)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

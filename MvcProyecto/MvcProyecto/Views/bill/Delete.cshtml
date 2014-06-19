@@ -1,0 +1,67 @@
+﻿@model Proyecto.DataAccess.bill
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>bill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.client1.identification)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.client1.identification)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.payment_term)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.payment_term)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.amount_total)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.amount_total)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.total_taxes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.total_taxes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.total_withTaxes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.total_withTaxes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

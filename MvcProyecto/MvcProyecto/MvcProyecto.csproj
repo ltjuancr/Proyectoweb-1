@@ -162,17 +162,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\accounts_payableController.cs" />
+    <Compile Include="Controllers\billController.cs" />
+    <Compile Include="Controllers\clientController.cs" />
+    <Compile Include="Controllers\detailBillController.cs" />
+    <Compile Include="Controllers\detailPurchaseOrderController.cs" />
     <Compile Include="Controllers\employeeController.cs" />
     <Compile Include="Controllers\family_productController.cs" />
+    <Compile Include="Controllers\filtroProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\postController.cs" />
     <Compile Include="Controllers\productController.cs" />
+    <Compile Include="Controllers\purchaseOrderController.cs" />
+    <Compile Include="Controllers\routeController.cs" />
     <Compile Include="Controllers\supplierController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\filtroProductModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +326,42 @@
     <Content Include="Views\product\Edit.cshtml" />
     <Content Include="Views\product\Delete.cshtml" />
     <Content Include="Views\Home\start.cshtml" />
+    <Content Include="Views\purchaseOrder\Index.cshtml" />
+    <Content Include="Views\purchaseOrder\Details.cshtml" />
+    <Content Include="Views\purchaseOrder\Create.cshtml" />
+    <Content Include="Views\purchaseOrder\Edit.cshtml" />
+    <Content Include="Views\purchaseOrder\Delete.cshtml" />
+    <Content Include="Views\detailPurchaseOrder\Index.cshtml" />
+    <Content Include="Views\detailPurchaseOrder\Details.cshtml" />
+    <Content Include="Views\detailPurchaseOrder\Create.cshtml" />
+    <Content Include="Views\detailPurchaseOrder\Edit.cshtml" />
+    <Content Include="Views\detailPurchaseOrder\Delete.cshtml" />
+    <Content Include="Views\accounts_payable\Index.cshtml" />
+    <Content Include="Views\accounts_payable\Details.cshtml" />
+    <Content Include="Views\accounts_payable\Create.cshtml" />
+    <Content Include="Views\accounts_payable\Edit.cshtml" />
+    <Content Include="Views\accounts_payable\Delete.cshtml" />
+    <Content Include="Views\bill\Index.cshtml" />
+    <Content Include="Views\bill\Details.cshtml" />
+    <Content Include="Views\bill\Create.cshtml" />
+    <Content Include="Views\bill\Edit.cshtml" />
+    <Content Include="Views\bill\Delete.cshtml" />
+    <Content Include="Views\detailBill\Index.cshtml" />
+    <Content Include="Views\detailBill\Details.cshtml" />
+    <Content Include="Views\detailBill\Create.cshtml" />
+    <Content Include="Views\detailBill\Edit.cshtml" />
+    <Content Include="Views\detailBill\Delete.cshtml" />
+    <Content Include="Views\client\Index.cshtml" />
+    <Content Include="Views\client\Details.cshtml" />
+    <Content Include="Views\client\Create.cshtml" />
+    <Content Include="Views\client\Edit.cshtml" />
+    <Content Include="Views\client\Delete.cshtml" />
+    <Content Include="Views\route\Index.cshtml" />
+    <Content Include="Views\route\Details.cshtml" />
+    <Content Include="Views\route\Create.cshtml" />
+    <Content Include="Views\route\Edit.cshtml" />
+    <Content Include="Views\route\Delete.cshtml" />
+    <Content Include="Views\filtroProduct\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dc1b029241d44d15a5fb5df8c18bc28b" Name="Diagrama1" ZoomLevel="77">
-        <EntityTypeShape EntityType="SalePointModel.accounts_payable" Width="1.5" PointX="6" PointY="10.125" />
-        <EntityTypeShape EntityType="SalePointModel.accounts_receivable" Width="1.5" PointX="6.75" PointY="1.125" />
-        <EntityTypeShape EntityType="SalePointModel.bill" Width="1.5" PointX="3" PointY="0.5" />
-        <EntityTypeShape EntityType="SalePointModel.client" Width="1.5" PointX="0.5" PointY="1.25" />
-        <EntityTypeShape EntityType="SalePointModel.detailBill" Width="1.5" PointX="6" PointY="5" />
-        <EntityTypeShape EntityType="SalePointModel.detailPurchaseOrder" Width="1.5" PointX="8.75" PointY="10.25" />
-        <EntityTypeShape EntityType="SalePointModel.detailRequisition" Width="1.5" PointX="8.375" PointY="6" />
-        <EntityTypeShape EntityType="SalePointModel.EMPLOYEE" Width="1.5" PointX="11.375" PointY="3.75" />
-        <EntityTypeShape EntityType="SalePointModel.family_product" Width="1.5" PointX="3.375" PointY="4.875" />
-        <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="11.5" PointY="0.5" />
-        <EntityTypeShape EntityType="SalePointModel.product" Width="1.5" PointX="2.75" PointY="7" />
-        <EntityTypeShape EntityType="SalePointModel.purchaseOrder" Width="1.5" PointX="2.25" PointY="11.625" />
-        <EntityTypeShape EntityType="SalePointModel.requisition" Width="1.5" PointX="9.125" PointY="1.625" />
-        <EntityTypeShape EntityType="SalePointModel.route" Width="1.5" PointX="11.375" PointY="8.125" />
-        <EntityTypeShape EntityType="SalePointModel.supplier" Width="1.5" PointX="0.5" PointY="4.875" />
+      <Diagram DiagramId="dc1b029241d44d15a5fb5df8c18bc28b" Name="Diagrama1" ZoomLevel="26">
+        <EntityTypeShape EntityType="SalePointModel.accounts_payable" Width="1.5" PointX="6.0687117325461983" PointY="0.33256584421385349" />
+        <EntityTypeShape EntityType="SalePointModel.accounts_receivable" Width="1.5" PointX="9.60009320341055" PointY="24.052062299126789" />
+        <EntityTypeShape EntityType="SalePointModel.bill" Width="1.5" PointX="10.96801093917713" PointY="15.137621961132448" />
+        <EntityTypeShape EntityType="SalePointModel.client" Width="1.5" PointX="0.97613105223333974" PointY="27.638631475921084" />
+        <EntityTypeShape EntityType="SalePointModel.detailBill" Width="1.5" PointX="2.0983196897890046" PointY="19.439242386929337" />
+        <EntityTypeShape EntityType="SalePointModel.detailPurchaseOrder" Width="1.5" PointX="0.18690720954300241" PointY="31.131613894892677" />
+        <EntityTypeShape EntityType="SalePointModel.detailRequisition" Width="1.5" PointX="4.24210625898191" PointY="30.804807573000346" />
+        <EntityTypeShape EntityType="SalePointModel.EMPLOYEE" Width="1.5" PointX="8.0579214785517763" PointY="13.224586299259489" />
+        <EntityTypeShape EntityType="SalePointModel.family_product" Width="1.5" PointX="2.0550011536362587" PointY="26.02484924813027" />
+        <EntityTypeShape EntityType="SalePointModel.postType" Width="1.5" PointX="8.5601713361964435" PointY="24.137220811162713" />
+        <EntityTypeShape EntityType="SalePointModel.product" Width="1.5" PointX="1.6290045872465728" PointY="22.082416738421852" />
+        <EntityTypeShape EntityType="SalePointModel.purchaseOrder" Width="1.5" PointX="9.937281192251147" PointY="21.845809648672962" />
+        <EntityTypeShape EntityType="SalePointModel.requisition" Width="1.5" PointX="6.4609261278346768" PointY="23.038179289101706" />
+        <EntityTypeShape EntityType="SalePointModel.route" Width="1.5" PointX="10.456849134739883" PointY="11.367987891364837" />
+        <EntityTypeShape EntityType="SalePointModel.supplier" Width="1.5" PointX="4.8641378492415592" PointY="6.6733837158760911" />
         <AssociationConnector Association="SalePointModel.fk_purchaseOrder1" />
         <AssociationConnector Association="SalePointModel.fk_supplier_payable" />
         <AssociationConnector Association="SalePointModel.fk_bill_rece" />
