@@ -57,8 +57,8 @@ insert into family_product values('Legumbres');
 CREATE TABLE supplier 
 (
     [id] int identity,
+     [company] varchar (50) null,
   	 [legalIdentification_card] varchar (50) not null,
-	 [company] varchar (50) null,
      [account] varchar (50) null,
       [phone] varchar (50) null,
       [address] varchar (50) null,
@@ -150,7 +150,6 @@ CREATE TABLE purchaseOrder
 	 [id] int identity,
 	 [supplier] int not null,--pedido de proveedor
 	 [description] varchar(1000) null,
-	 [state] varchar (10) null,
 	 [date] varchar (10)null,
 	 [amount_total] int , --monto
      [total_taxes] int , --impuestos
@@ -201,7 +200,7 @@ CREATE TABLE detailBill
 	  constraint fk_bill foreign key (bill) references bill(id)	
 );
 
-
+drop table accounts_payable
 
 --TABLE CUENTAS POR PAGAR
 CREATE TABLE accounts_payable
@@ -210,10 +209,10 @@ CREATE TABLE accounts_payable
 	 [purchaseOrder] int not null, --codigo de factura
 	 [supplier] int not null, --proveedor a pagar
 	 [date] varchar null,
-	 [balance] float null,
-     [outstanding_balance] float null, --saldo pendiente	 
-	 [state] varchar (50) null, 
-	 [made_by] varchar (50) null, --hecha por
+	 [amount_total] int null, --monto
+     [total_taxes] int null, --impuestos
+     [total_withTaxes] int null,	 
+     [state] varchar (50) null,
 	 constraint pk_accounts_payable primary key (id),
 	 constraint fk_purchaseOrder1 foreign key (purchaseOrder) references purchaseOrder (id),
 	 constraint fk_supplier_payable foreign key (supplier) references supplier(id)
