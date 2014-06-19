@@ -169,6 +169,7 @@
     <Compile Include="Controllers\detailPurchaseOrderController.cs" />
     <Compile Include="Controllers\employeeController.cs" />
     <Compile Include="Controllers\family_productController.cs" />
+    <Compile Include="Controllers\filterEmployeeController.cs" />
     <Compile Include="Controllers\filtroProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\postController.cs" />
@@ -181,6 +182,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\filterEmployeeModels.cs" />
     <Compile Include="Models\filtroProductModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -362,6 +364,7 @@
     <Content Include="Views\route\Edit.cshtml" />
     <Content Include="Views\route\Delete.cshtml" />
     <Content Include="Views\filtroProduct\Index.cshtml" />
+    <Content Include="Views\filterEmployee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

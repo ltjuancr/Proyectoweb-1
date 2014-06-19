@@ -1,0 +1,101 @@
+﻿@model MvcProyecto.Models.filterEmployeeModels
+@{
+    ViewBag.Title = "Employee search according to their Post";
+}
+
+<h2>Employee search according to their Post</h2>
+
+@using (Html.BeginForm()) {     
+    @Html.ValidationSummary(true)
+    
+    <div class="editor-field">
+        @Html.EditorFor(model => model.SearchText)
+    </div>
+    <input type="submit" value="Buscar"/>
+}
+
+<table>
+    <thead>
+        <tr>
+            <td style="font-weight:bold">
+               Identification
+            </td>
+            <td style="font-weight:bold">
+                Name
+            </td>
+            <td style="font-weight:bold">
+             Last Name
+            </td>
+            <td style="font-weight:bold">
+               Age
+            </td>
+            <td style="font-weight:bold">
+               License
+            </td>
+               <td style="font-weight:bold">
+               Password
+            </td>
+               <td style="font-weight:bold">
+               Phone
+            </td>
+               <td style="font-weight:bold">
+               Post Type
+            </td>
+          
+               <td style="font-weight:bold">
+              Salary
+            </td>
+          
+               <td style="font-weight:bold">
+              Address
+            </td>
+          
+               <td style="font-weight:bold">
+               Email
+            </td>
+            <td style="font-weight:bold">
+              
+
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+     @foreach(var item in Model.employee){
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.identification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.last_name)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.license)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postType1.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+       
+        </tr> 
+    }
+</table>
