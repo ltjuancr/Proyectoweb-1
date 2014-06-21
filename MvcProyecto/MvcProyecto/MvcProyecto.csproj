@@ -172,6 +172,7 @@
     <Compile Include="Controllers\filterEmployeeController.cs" />
     <Compile Include="Controllers\filtroProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\postController.cs" />
     <Compile Include="Controllers\productController.cs" />
     <Compile Include="Controllers\purchaseOrderController.cs" />
@@ -307,11 +308,6 @@
     <Content Include="Views\post\Create.cshtml" />
     <Content Include="Views\post\Edit.cshtml" />
     <Content Include="Views\post\Delete.cshtml" />
-    <Content Include="Views\employee\Index.cshtml" />
-    <Content Include="Views\employee\Details.cshtml" />
-    <Content Include="Views\employee\Create.cshtml" />
-    <Content Include="Views\employee\Edit.cshtml" />
-    <Content Include="Views\employee\Delete.cshtml" />
     <Content Include="Views\family_product\Index.cshtml" />
     <Content Include="Views\family_product\Details.cshtml" />
     <Content Include="Views\family_product\Create.cshtml" />
@@ -322,11 +318,6 @@
     <Content Include="Views\supplier\Create.cshtml" />
     <Content Include="Views\supplier\Edit.cshtml" />
     <Content Include="Views\supplier\Delete.cshtml" />
-    <Content Include="Views\product\Index.cshtml" />
-    <Content Include="Views\product\Details.cshtml" />
-    <Content Include="Views\product\Create.cshtml" />
-    <Content Include="Views\product\Edit.cshtml" />
-    <Content Include="Views\product\Delete.cshtml" />
     <Content Include="Views\Home\start.cshtml" />
     <Content Include="Views\purchaseOrder\Index.cshtml" />
     <Content Include="Views\purchaseOrder\Details.cshtml" />
@@ -365,6 +356,14 @@
     <Content Include="Views\route\Delete.cshtml" />
     <Content Include="Views\filtroProduct\Index.cshtml" />
     <Content Include="Views\filterEmployee\Index.cshtml" />
+    <Content Include="Views\filtroProduct\Create.cshtml" />
+    <Content Include="Views\filtroProduct\Delete.cshtml" />
+    <Content Include="Views\filtroProduct\Details.cshtml" />
+    <Content Include="Views\filtroProduct\Edit.cshtml" />
+    <Content Include="Views\filterEmployee\Create.cshtml" />
+    <Content Include="Views\filterEmployee\Delete.cshtml" />
+    <Content Include="Views\filterEmployee\Details.cshtml" />
+    <Content Include="Views\filterEmployee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

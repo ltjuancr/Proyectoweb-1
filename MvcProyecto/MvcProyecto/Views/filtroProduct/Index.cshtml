@@ -1,5 +1,9 @@
 ﻿@model MvcProyecto.Models.filtroProductModels
 @{
+    <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    
     ViewBag.Title = "Product search according to their Category";
 }
 
@@ -74,7 +78,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.supplier1.company)
             </td>
-       
+         <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
         </tr> 
     }
 </table>

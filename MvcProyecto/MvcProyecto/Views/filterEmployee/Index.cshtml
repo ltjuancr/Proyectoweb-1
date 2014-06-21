@@ -3,6 +3,10 @@
     ViewBag.Title = "Employee search according to their Post";
 }
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
 <h2>Employee search according to their Post</h2>
 
 @using (Html.BeginForm()) {     
@@ -95,6 +99,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.email)
             </td>
+                 <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
        
         </tr> 
     }
