@@ -4,66 +4,72 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 style="color:burlywood" class="well well-sm">Account Payable</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.purchaseOrder1.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.supplier1.company)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.amount_total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.total_taxes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.total_withTaxes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.state)
-        </th>
-        <th></th>
-    </tr>
+<ul class="pager">
+    <li class="next"> 
+        @Html.ActionLink("Create New", "Create")
+    </li>
+</ul>
+<br></br>
+<div class="panel panel-warning">
+    <div class="panel-heading">Existing Account Payable </div>  
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.purchaseOrder1.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.supplier1.company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_taxes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_withTaxes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.purchaseOrder1.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.supplier1.company)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.amount_total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total_taxes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total_withTaxes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.purchaseOrder1.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.supplier1.company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount_total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_taxes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_withTaxes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td class=" breadcrumb label label-danger">
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
 
-</table>
+    </table>
+</div> 

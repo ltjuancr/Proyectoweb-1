@@ -4,12 +4,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 style="color:burlywood" class="well well-sm">Family Product</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<ul class="pager">
+    <li class="next"> 
+        @Html.ActionLink("Create New", "Create")
+    </li>
+</ul>
+<br></br>
+<div class="panel panel-warning">
+      <div class="panel-heading">Existing Family Products </div>  
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.description)
@@ -22,7 +27,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.description)
         </td>
-        <td>
+        <td class=" breadcrumb label label-danger">
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
@@ -31,3 +36,4 @@
 }
 
 </table>
+</div>

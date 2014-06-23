@@ -3,11 +3,11 @@
     ViewBag.Title = "Employee search according to their Post";
 }
 
-<p>
+<p class="btn btn-lg btn-primary ">
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<h2>Employee search according to their Post</h2>
+<h2 style="color:burlywood" class="well well-sm">Employee search according to their Post</h2>
 
 @using (Html.BeginForm()) {     
     @Html.ValidationSummary(true)
@@ -15,96 +15,99 @@
     <div class="editor-field">
         @Html.EditorFor(model => model.SearchText)
     </div>
-    <input type="submit" value="Buscar"/>
+    <input class="btn btn-lg btn-danger" type="submit" value="Buscar"/>
+    <br></br>
 }
-
-<table>
-    <thead>
-        <tr>
-            <td style="font-weight:bold">
-               Identification
-            </td>
-            <td style="font-weight:bold">
-                Name
-            </td>
-            <td style="font-weight:bold">
-             Last Name
-            </td>
-            <td style="font-weight:bold">
-               Age
-            </td>
-            <td style="font-weight:bold">
-               License
-            </td>
-               <td style="font-weight:bold">
-               Password
-            </td>
-               <td style="font-weight:bold">
-               Phone
-            </td>
-               <td style="font-weight:bold">
-               Post Type
-            </td>
+<div class="panel panel-warning">
+    <div class="panel-heading">Existing Products </div>  
+    <table class="table">
+        <thead>
+            <tr>
+                <td style="font-weight:bold">
+                   Identification
+                </td>
+                <td style="font-weight:bold">
+                    Name
+                </td>
+                <td style="font-weight:bold">
+                 Last Name
+                </td>
+                <td style="font-weight:bold">
+                   Age
+                </td>
+                <td style="font-weight:bold">
+                   License
+                </td>
+                   <td style="font-weight:bold">
+                   Password
+                </td>
+                   <td style="font-weight:bold">
+                   Phone
+                </td>
+                   <td style="font-weight:bold">
+                   Post Type
+                </td>
           
-               <td style="font-weight:bold">
-              Salary
-            </td>
+                   <td style="font-weight:bold">
+                  Salary
+                </td>
           
-               <td style="font-weight:bold">
-              Address
-            </td>
+                   <td style="font-weight:bold">
+                  Address
+                </td>
           
-               <td style="font-weight:bold">
-               Email
-            </td>
-            <td style="font-weight:bold">
+                   <td style="font-weight:bold">
+                   Email
+                </td>
+                <td style="font-weight:bold">
               
 
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-     @foreach(var item in Model.employee){
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.identification)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.last_name)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.age)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.license)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.postType1.description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.salary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+         @foreach(var item in Model.employee){
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.identification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
                  <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
+                    @Html.DisplayFor(modelItem => item.last_name)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.age)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.license)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.postType1.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td class=" breadcrumb label label-danger ">
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                </td>
        
-        </tr> 
-    }
-</table>
+            </tr> 
+        }
+    </table>
+</div>

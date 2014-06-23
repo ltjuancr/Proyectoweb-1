@@ -4,29 +4,29 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 style="color:burlywood" class="well well-sm">Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset class="alert alert-warning">
         <legend>postType</legend>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:330px; font-style:italic">
             @Html.LabelFor(model => model.description)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.description)
             @Html.ValidationMessageFor(model => model.description)
         </div>
-
+        <br></br>
         <p>
-            <input type="submit" value="Create" />
+            <input class="btn btn-lg btn-warning"  type="submit" value="Create" />
         </p>
     </fieldset>
 }
 
-<div>
+<div class="btn btn-sm btn-success">&larr;
     @Html.ActionLink("Back to List", "Index")
 </div>
 

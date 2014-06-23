@@ -1,45 +1,101 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
     <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Mi aplicación ASP.NET MVC</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        
+        
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/bootstrap.min.css")
+        @Styles.Render("~/Content/bootstrap-theme.min.css")
+        @Styles.Render("~/Content/css/index.css")
     </head>
-    <body>
+    <body id="header">
         <header>
-            <div class="content-wrapper">
+            <div style=" width: 1300px; height: 120px; " id="container">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Frutas Y verduras VyV", "Index", "Home")</p>
+                    <p class="title" style="margin-left:20px; margin-top:12px; font-size: 30px;">Frutas y verduras V&V</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                           <li>@Html.ActionLink("Product", "Index", "filtroProduct")</li>
-                            <li>@Html.ActionLink("Family Product", "Index", "family_product")</li>
-                            <li>@Html.ActionLink("Employee", "Index", "filterEmployee")</li>
-                            <li>@Html.ActionLink("Post Employee", "Index", "post")</li>
-                             <li>@Html.ActionLink("Client", "Index", "client")</li>
-                            <li>@Html.ActionLink("Supplier", "Index", "supplier")</li>
-                            <li>@Html.ActionLink("Purchase Order", "Index", "purchaseOrder")</li>
-                            <li>@Html.ActionLink("Detail Purchase Order", "Index", "detailPurchaseOrder")</li>
-                             <li>@Html.ActionLink("Account Payable", "Index", "accounts_payable")</li>
-                             <li>@Html.ActionLink("Bill", "Index", "bill")</li>
-                            <li>@Html.ActionLink("Detail Bill", "Index", "detailBill")</li>
-                            <li>@Html.ActionLink("Route", "Index", "route")</li>                      
-                            
 
-                           
-
+                    <div class="btn-group" style="margin-top:10%;">
+                        <div class="dropdown btn-group">
+                            <button class="btn dropdown-toggle btn-danger" type="button" data-toggle="dropdown">
+                                <img src="/Images/inicio.png" alt="" />
+                                Start <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu ">
+                                <li >@Html.ActionLink("Start", "Index", "Home")</li>     
+                            </ul>
+                        </div>
+                        <div class="dropdown btn-group">
+                            <button class="btn dropdown-toggle btn-info" type="button" data-toggle="dropdown">
+                                <img src="/Images/venta.png" alt="" />
+                                Sales <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu ">
+                                <li >@Html.ActionLink("Billing", "", "")</li>
+                                <li >@Html.ActionLink("Customer Management", "", "") </li>
+                                <li >@Html.ActionLink("Accounts receivable management", "", "")</li>
+                                <li >@Html.ActionLink("Close box", "", "")</li>                    
+                            </ul>
+                        </div>
+                        <div class="dropdown btn-group">
+                            <button class="btn dropdown-toggle btn-warning" type="button" id="menudesplegable" data-toggle="dropdown"> 
+                               <img src="/Images/man.gif" alt="" />
+                               System maintenance  <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li >@Html.ActionLink("Product", "Index", "filtroProduct") </li>
+                            <li >@Html.ActionLink("Family Product", "Index", "family_product")</li>
+                            <li >@Html.ActionLink("Employee", "Index", "filterEmployee")</li>                    
+                            <li >@Html.ActionLink("Post Employee", "Index", "post")</li>
+                            <li >@Html.ActionLink("Client", "Index", "client")</li>
+                            <li >@Html.ActionLink("Supplier", "Index", "supplier")</li>
+                            <li >@Html.ActionLink("Purchase Order", "Index", "purchaseOrder")</li>
+                            <li >@Html.ActionLink("Detail Purchase Order", "Index", "detailPurchaseOrder")</li>
+                            <li >@Html.ActionLink("Account Payable", "Index", "accounts_payable")</li>
+                            <li >@Html.ActionLink("Bill", "Index", "bill")</li>
+                            <li >@Html.ActionLink("Detail Bill", "Index", "detailBill")</li>
+                            <li >@Html.ActionLink("Route", "Index", "route")</li> 
                         </ul>
-                    </nav>
+                        </div>
+                        <div class="dropdown btn-group">
+                            <button class="btn dropdown-toggle btn-success" type="button" data-toggle="dropdown">
+                                <img src="/Images/cerrar.png" alt="" />
+                                Logout <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu ">
+                                <li >@Html.ActionLink("Start", "Index", "Home")</li>     
+                            </ul>
+                        </div>
+                    </div>
+
+                    @*<nav>
+                        <ul id="menu" class="btn-group">
+                            <li id="black" class="btn btn-success">@Html.ActionLink("Start", "Index", "Home")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Product", "Index", "filtroProduct") </li>
+                            <li class="btn btn-default dropdown-toggle" >@Html.ActionLink("Family Product", "Index", "family_product")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Employee", "Index", "filterEmployee")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Post Employee", "Index", "post")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Client", "Index", "client")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Supplier", "Index", "supplier")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Purchase Order", "Index", "purchaseOrder")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Detail Purchase Order", "Index", "detailPurchaseOrder")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Account Payable", "Index", "accounts_payable")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Bill", "Index", "bill")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Detail Bill", "Index", "detailBill")</li>
+                            <li class="btn btn-default dropdown-toggle">@Html.ActionLink("Route", "Index", "route")</li>                      
+           
+                        </ul>
+                    </nav>*@
                 </div>
             </div>
         </header>
@@ -49,15 +105,25 @@
                 @RenderBody()
             </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Sale Point</p>
-                </div>
+        <footer >
+            <img style="width: 400px; height: 200px; border: 3px solid #D0D0D0; border-color:black; float :right; margin-right:2.5%; margin-top:5%; visibility: visible;"  src="../Images/imgIni.jpg" alt="" >
+           
+            <div class="float-right" style="margin-top: 50%; color:#FFFFFF; font-size:medium;">
+                <ul class="pagination">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
             </div>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/Content/js/bootstrap.min.js")
         @RenderSection("scripts", required: false)
     </body>
+
 </html>

@@ -4,9 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="color:burlywood" class="well well-sm">Details</h2>
 
-<fieldset>
+<fieldset class="alert alert-warning">
     <legend>EMPLOYEE</legend>
 
     <div class="display-label">
@@ -86,7 +86,7 @@
         @Html.DisplayFor(model => model.email)
     </div>
 </fieldset>
-<p>
+<p class="btn btn-lg btn-warning">
     @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -4,15 +4,15 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 style="color:burlywood" class="well well-sm">Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset class="alert alert-warning">
         <legend>product</legend>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:330px; font-style:italic">
             @Html.LabelFor(model => model.code)
         </div>
         <div class="editor-field">
@@ -20,7 +20,7 @@
             @Html.ValidationMessageFor(model => model.code)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:260px; font-style:italic">
             @Html.LabelFor(model => model.familyProduct, "family_product")
         </div>
         <div class="editor-field">
@@ -28,7 +28,7 @@
             @Html.ValidationMessageFor(model => model.familyProduct)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:260px; font-style:italic">
             @Html.LabelFor(model => model.product_name)
         </div>
         <div class="editor-field">
@@ -36,7 +36,7 @@
             @Html.ValidationMessageFor(model => model.product_name)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:290px; font-style:italic">
             @Html.LabelFor(model => model.unit_price)
         </div>
         <div class="editor-field">
@@ -44,7 +44,7 @@
             @Html.ValidationMessageFor(model => model.unit_price)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:290px; font-style:italic">
             @Html.LabelFor(model => model.expiration)
         </div>
         <div class="editor-field">
@@ -52,7 +52,7 @@
             @Html.ValidationMessageFor(model => model.expiration)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:290px; font-style:italic">
             @Html.LabelFor(model => model.existence)
         </div>
         <div class="editor-field">
@@ -60,7 +60,7 @@
             @Html.ValidationMessageFor(model => model.existence)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:290px; font-style:italic">
             @Html.LabelFor(model => model.minimum)
         </div>
         <div class="editor-field">
@@ -68,21 +68,21 @@
             @Html.ValidationMessageFor(model => model.minimum)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:295px; font-style:italic">
             @Html.LabelFor(model => model.supplier, "supplier")
         </div>
         <div class="editor-field">
             @Html.DropDownList("supplier", String.Empty)
             @Html.ValidationMessageFor(model => model.supplier)
         </div>
-
+        <br></br>
         <p>
-            <input type="submit" value="Create" />
+            <input class="btn btn-lg btn-warning" type="submit" value="Create" />
         </p>
     </fieldset>
 }
 
-<div>
+<div class="btn btn-sm btn-success">&larr;
     @Html.ActionLink("Back to List", "Index")
 </div>
 

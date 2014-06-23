@@ -4,15 +4,15 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 style="color:burlywood" class="well well-sm">Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset class="alert alert-warning">
         <legend>detailBill</legend>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:330px; font-style:italic">
             @Html.LabelFor(model => model.bill, "bill1")
         </div>
         <div class="editor-field">
@@ -20,7 +20,7 @@
             @Html.ValidationMessageFor(model => model.bill)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:301px; font-style:italic">
             @Html.LabelFor(model => model.product, "product1")
         </div>
         <div class="editor-field">
@@ -28,7 +28,7 @@
             @Html.ValidationMessageFor(model => model.product)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:310px; font-style:italic">
             @Html.LabelFor(model => model.amount)
         </div>
         <div class="editor-field">
@@ -36,21 +36,21 @@
             @Html.ValidationMessageFor(model => model.amount)
         </div>
 
-        <div class="editor-label">
+        <div class="label label-default" style="margin-right:328px; font-style:italic">
             @Html.LabelFor(model => model.price)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.price)
             @Html.ValidationMessageFor(model => model.price)
         </div>
-
+        <br></br>
         <p>
-            <input type="submit" value="Create" />
+            <input class="btn btn-lg btn-warning" type="submit" value="Create" />
         </p>
     </fieldset>
 }
 
-<div>
+<div class="btn btn-sm btn-success">&larr;
     @Html.ActionLink("Back to List", "Index")
 </div>
 
